@@ -1,5 +1,5 @@
 # **Introduction**
-	* In this project, our team will create a Chip8 Emulator that is able to run two self created games (and any other Chip8 games) on any javascript enabled web-browser.
+	- In this project, our team will create a Chip8 Emulator that is able to run two self created games (and any other Chip8 games) on any javascript enabled web-browser
 
 # **Project Organization**
 	## Communication and Meeting Times
@@ -11,11 +11,11 @@
 	
 	## Team Roles
 	The Team is divided into roles as follows:
-		* Scrum Master 
-		* Test Lead
-		* Submission Handler
-		*
-		*
+		- Scrum Master 
+		- Test Lead
+		- Submission Handler
+		-
+		-
 		
 		
 # **Risk Analysis**
