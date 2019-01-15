@@ -41,31 +41,31 @@
 	*_March 29_    Completeion of Release 4 presentation
 	*_April 8_     Last minute improvments or potentional extra features
 	
-#**Testing**
+# **Testing**
 	For automated testing, our team will be looking into using Selenium, Appium or Jest and will decide once more research on these three tools have been completed.
 	
-#**Project Breakdown**
-	##Emulator
+# **Project Breakdown**
+	## Emulator
 	-Each memeber will be contributing to this part equally
 		*x hours of work-time needed per person
 	
-	##Visualizer
+	## Visualizer
 	-Two memebers (...) will be working on this once the emulator is completed
 		*x hours of work-time needed per person
 	
-	##Games
+	## Games
 	-Two members will simutaneously work on the two games as others work on the Visulizer
 		*x hours of work-time needed per person
 	
-	##Chip8 Tool
+	## Chip8 Tool
 	-One member will be simutaneously working on this while the others work on the games and visualizer
 		*x hours of work-time needed per person
 
-#**Major Features for Next Release**
-	##Chip8 Emulator
+# **Major Features for Next Release**
+	## Chip8 Emulator
 		*An emulator will be completed
 		*Can operate Chip8 games others have created.
-	##Chip8 Visulizer
+	## Chip8 Visulizer
 		*Visulizer will be completed. Be able to see Chip8 games being played in any web browser
 
 
