@@ -2,14 +2,14 @@
 	* In this project, our team will create a Chip8 Emulator that is able to run two self created games (and any other Chip8 games) on any javascript enabled web-browser.
 
 # **Project Organization**
-	##Communication and Meeting Times
+	## Communication and Meeting Times
 	Communication between team members is done via Slack and Whatsapp
 	The team will have weekly meetings every **Monday** at **12:30pm**
 	
-	##Software Repository Being Used
+	## Software Repository Being Used
 	**The team will be using Github to implement code and merge each part together**
 	
-	##Team Roles
+	## Team Roles
 	The Team is divided into roles as follows:
 		* Scrum Master 
 		* Test Lead
