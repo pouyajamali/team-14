@@ -9,10 +9,11 @@ Finish Dates
       Release 0 presentation
        
   Feb 6
-      Visulizer
+      Visulizer with ongoing back and forth testing.  
+      Replaning and minor changes if needed. 
       
   Feb 27
-      Testing code
+      Automated testing.
       Extra helpful tools
       Improvments to Emulator and Visulizer
       
@@ -24,6 +25,6 @@ Finish Dates
       
   Apr 8
       Improvments 
-        - adding potentional features ie sounds, better interference 
+        - adding potentional features ie sounds, better interface
       Debugging
    
