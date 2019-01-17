@@ -11,11 +11,11 @@ The team will be using **Github** to implement code and merge each part together
 	
 ## Team Roles
 The Team is divided into roles as follows:
-*   Scrum Master 
+*   Project Lead
 *   Test Lead
 *   Submission Handler
-*
-*
+*   Scrum Master
+*   
 		
 		
 # **Risk Analysis**
@@ -46,20 +46,23 @@ For automated testing, our team will be looking into using Selenium, Appium or J
 	
 # **Project Breakdown**
 ## Emulator
--   Each memeber will be contributing to this part equally
-    * x hours of work-time needed per person
+-   Each member will be contributing to the emulator working on different aspects
+  - Three members will work on creating and intergrating the opcodes.
+    - 15 hours of work-time needed per person
+  -Two members will work on reading the game files and loading it into the emulators memory  
+    - 10 hours of work-time needed per person
 	
 ## Visualizer
-*   Two memebers (...) will be working on this once the emulator is completed
-    * x hours of work-time needed per person
+*   Two memebers will be working on this once the emulator is completed
+  * 20 hours of work-time needed per person
 
 ## Games
 *   Two members will simutaneously work on the two games as others work on the Visulizer
-    * x hours of work-time needed per person
+  * 20 hours of work-time needed per person
 	
 ## Chip8 Tool
-*   One member will be simutaneously working on this while the others work on the games and visualizer
-    * x hours of work-time needed per person
+*   One member will be simutaneously working on implementing a useful tool
+  * 20 hours of work-time needed per person
 
 # **Major Features for Next Release**
 ## Chip8 Emulator
