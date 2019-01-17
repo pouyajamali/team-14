@@ -31,15 +31,15 @@ This Chip8 Emulator will be coded using Javascript and HTML
 *   Any web-broswer that has javascript enabled (Google Chrome, Firefox etc...)
 
 # **Major Project Deadlines**
-*   _January 18_  Release 0 Presentation Completed
-*   _January 25_  Chip8 Emulator completed and ready for testing
-*   _January 30_  Testing code ready to be implemented
-*   _February 6_  Chip8 Visulizer completed without pause, step forward etc.. capabilties
+*   _January 18_    Release 0 Presentation Completed
+*   _January 25_    Chip8 Emulator completed and ready for testing
+*   _January 30_    Testing code ready to be implemented
+*   _February 6_   Chip8 Visulizer completed without pause, step forward etc.. capabilties
 *   _February 18_ Chip8 Visulizer fully completed with pause step forward etc.. 
 *   _February 27_ Start of creation of two games and Extra helpful tools to implement
-*   _March 13_    Two games and extra tool completed
-*   _March 29_    Completeion of Release 4 presentation
-*   _April 8_     Last minute improvments or potentional extra features
+*   _March 13_       Two games and extra tool completed
+*   _March 29_       Completeion of Release 4 presentation
+*   _April 8_         Last minute improvments or potentional extra features
 	
 # **Testing**
 For automated testing, our team will be looking into using Selenium, Appium or Jest and will decide once more research on these three tools have been completed.
@@ -49,7 +49,7 @@ For automated testing, our team will be looking into using Selenium, Appium or J
 -   Each member will be contributing to the emulator working on different aspects
   - Three members will work on creating and intergrating the opcodes.
     - 15 hours of work-time needed per person
-  -Two members will work on reading the game files and loading it into the emulators memory  
+  - Two members will work on reading the game files and loading it into the emulators memory  
     - 10 hours of work-time needed per person
 	
 ## Visualizer
