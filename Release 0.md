@@ -5,6 +5,9 @@
 ## Communication and Meeting Times
 Communication between team members is done via Slack and Whatsapp
 The team will have weekly meetings every **Monday** at **12:30pm**
+
+## Team Software Process
+Our team has decided to follow the incremental development style. We have chosen this since we can make changes to our design and software more eaisly with each release.
 	
 ## Software Repository Being Used
 The team will be using **Github** to implement code and merge each part together
@@ -15,10 +18,11 @@ The Team is divided into roles as follows:
 *   Test Lead
 *   Submission Handler
 *   Scrum Master
-*   
+*   Developer Lead
 		
 		
 # **Risk Analysis**
+For this group project, our main conern is if a Team Member decides to drop the course or an unxpected event happens that casues a team member to leave the group. This can cause drastic changes in our scheduling and project division.
 
 # **Programming Language**
 This Chip8 Emulator will be coded using Javascript and HTML
@@ -31,15 +35,15 @@ This Chip8 Emulator will be coded using Javascript and HTML
 *   Any web-broswer that has javascript enabled (Google Chrome, Firefox etc...)
 
 # **Major Project Deadlines**
-*   _January 18_    Release 0 Presentation Completed
-*   _January 25_    Chip8 Emulator completed and ready for testing
-*   _January 30_    Testing code ready to be implemented
-*   _February 6_   Chip8 Visulizer completed without pause, step forward etc.. capabilties
+*   _January 18_  Release 0 Presentation Completed
+*   _January 25_  Chip8 Emulator completed and ready for testing
+*   _January 30_  Testing code ready to be implemented
+*   _February 6_  Chip8 Visulizer completed without pause, step forward etc.. capabilties
 *   _February 18_ Chip8 Visulizer fully completed with pause step forward etc.. 
 *   _February 27_ Start of creation of two games and Extra helpful tools to implement
-*   _March 13_       Two games and extra tool completed
-*   _March 29_       Completeion of Release 4 presentation
-*   _April 8_         Last minute improvments or potentional extra features
+*   _March 13_    Two games and extra tool completed
+*   _March 29_    Completeion of Release 4 presentation
+*   _April 8_     Last minute improvments or potentional extra features
 	
 # **Testing**
 For automated testing, our team will be looking into using Selenium, Appium or Jest and will decide once more research on these three tools have been completed.
