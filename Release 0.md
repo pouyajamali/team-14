@@ -3,9 +3,9 @@
 
 # **Project Organization**
 ## Communication and Meeting Times
--The team will have weekly meetings every **Monday** at **12:30pm** that are flexible with a minimum time of 1 hour. If **additional meeting** times are needed it will be held on **Wednesady** and **Fridays** starting at **12:30** for unexpected circumstances or quick updates
+*The team will have weekly meetings every **Monday** at **12:30pm** that are flexible with a minimum time of 1 hour. If **additional meeting** times are needed it will be held on **Wednesady** and **Fridays** starting at **12:30** for unexpected circumstances or quick updates
 
--Communication between team members is done via **Slack** and **Whatsapp**
+*Communication between team members is done via **Slack** and **Whatsapp**
 
 ## Software Repository
 The team will be using **Github** to implement code and merge each part together
@@ -52,11 +52,11 @@ For automated testing, our team will be looking into using Selenium, Appium or J
 	
 # **Project Breakdown**
 ## Emulator
--   Each member will be contributing to the emulator working on different aspects
-  - Three members will work on creating and integrating the opcodes.
-    - 10 hours of work-time needed per person
-  - Two members will work on reading the game files and loading it into the emulators memory  
-    - 10 hours of work-time needed per person
+*   Each member will be contributing to the emulator working on different aspects
+  * Three members will work on creating and integrating the opcodes.
+    * 10 hours of work-time needed per person
+  * Two members will work on reading the game files and loading it into the emulators memory  
+    * 10 hours of work-time needed per person
 	
 ## Visualizer
 *   Two memebers will be working on this once the emulator is completed
@@ -75,7 +75,8 @@ For automated testing, our team will be looking into using Selenium, Appium or J
 * An emulator will be completed
 * Can operate Chip8 games others have created.
 ## Chip8 Visulizer
-* Visualizer will be completed. Be able to see Chip8 games being played in any web browser
+* Visualizer will be completed
+* Be able to see Chip8 games being played in any web browser
 
 
   
