@@ -10,15 +10,15 @@
 
 # **Project Organization**
 ## Communication and Meeting Times
-*The team will have weekly meetings every **Monday** at **12:30pm** that are flexible with a minimum time of 1 hour. If **additional meeting** times are needed it will be held on **Wednesady** and **Fridays** starting at **12:30** for unexpected circumstances or quick updates
+* The team will have weekly meetings every **Monday** at **12:30pm** that are flexible with a minimum time of 1 hour. If **additional meeting** times are needed it will be held on **Wednesady** and **Fridays** starting at **12:30** for unexpected circumstances or quick updates
 
-*Communication between team members is done via **Slack** and **Whatsapp**
+* Communication between team members is done via **Slack** and **Whatsapp**
 
 ## Software Repository
-The team will be using **Github** to implement code and merge each part together
+* The team will be using **Github** to implement code and merge each part together
 
 ## Team Software Process
-Our team has decided to follow the **Incremental Development Style**. We have chosen this since we can make changes to our design and software more eaisly with each release. (expand)
+* Our team has decided to follow the **Incremental Development Style**. We have chosen this since we can make changes to our design and software more eaisly with each release. (expand)
 	
 ## Team Roles
 The Team is divided into roles as follows:
@@ -31,10 +31,10 @@ The Team is divided into roles as follows:
 		
 		
 # **Risk Analysis**
-For this group project, our main concern is if a Team Member decides to drop the course or an unexpected event happens that causes a team member to leave the group. This can cause drastic changes in our scheduling and project division. To combat this, the work will be divided among the rest of the team members 
+* For this group project, our main concern is if a Team Member decides to drop the course or an unexpected event happens that causes a team member to leave the group. This can cause drastic changes in our scheduling and project division. To combat this, the work will be divided among the rest of the team members.
 
 # **Programming Language**
-This Chip8 Emulator will be coded using **HTML**/**CSS**,**JavaScript**
+* This Chip8 Emulator will be coded using **HTML**/**CSS**,**JavaScript**
 
 # **Hardware and Software Requirements**
 ## Hardware Needed
@@ -55,7 +55,7 @@ This Chip8 Emulator will be coded using **HTML**/**CSS**,**JavaScript**
 *   _April 8_     Last minute improvements or potential extra features completed
 	
 # **Testing**
-For automated testing, our team will be looking into using Selenium, Appium or Jest and will decide once more research on these three tools have been completed.
+* For automated testing, our team will be looking into using Selenium, Appium or Jest and will decide once more research on these three tools have been completed.
 	
 # **Project Breakdown**
 ## Emulator
