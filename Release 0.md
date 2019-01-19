@@ -1,6 +1,13 @@
 # **Introduction**
 * In this project, our team will create a Chip8 Emulator that is able to run two self created games (and any other Chip8 games) on any javascript enabled web-browser
 
+* Team Members are as follows:
+  * Vikash Reddy
+  * Kei Nakano
+  * Jake Kim
+  * Sidharth Miglani
+  * Pouya Jamali
+
 # **Project Organization**
 ## Communication and Meeting Times
 *The team will have weekly meetings every **Monday** at **12:30pm** that are flexible with a minimum time of 1 hour. If **additional meeting** times are needed it will be held on **Wednesady** and **Fridays** starting at **12:30** for unexpected circumstances or quick updates
