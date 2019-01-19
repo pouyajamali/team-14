@@ -1,7 +1,7 @@
 # **Introduction**
 * In this project, our team will create a Chip8 Emulator that is able to run two self created games (and any other Chip8 games) on any javascript enabled web-browser
 
-* Team Members are as follows:
+* Team Members are:
   * Vikash Reddy
   * Kei Nakano
   * Jake Kim
