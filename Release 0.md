@@ -67,11 +67,11 @@ The Team is divided into roles as follows:
 	
 ## Visualizer
 *   Two memebers will be working on this once the emulator is completed
-  * 15 hours of work-time needed per person
+   * 15 hours of work-time needed per person
 
 ## Games
 *   Two members will simultaneously work on the two games as others work on the Visualizer
-  * 15 hours of work-time needed per person
+   * 15 hours of work-time needed per person
 	
 ## Chip8 Tool
 *   One member will be simultaneously working on implementing a useful tool
