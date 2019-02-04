@@ -46,7 +46,8 @@ The Team is divided into roles as follows:
 # **Major Project Deadlines** will need change
 *   _January 18_  Release 0 Presentation Completed
 *   _January 25_  Chip8 Emulator completed and ready for automated testing
-*   _Feburary 12_  Automated testing ready to be implemented -- change dates from here
+*   _February 4_  Actual finsih date of of Emulator due to inexperience with JavaScript 
+*   _February 12_  Automated testing ready to be implemented -- change dates from here
 *   _February 15_  Chip8 Visualizer completed without pause, step forward etc.. capabilities
 *   _February 25_ Chip8 Visualizer fully completed with pause step forward etc.. 
 *   _February 28_ Start of creation of two games and Extra helpful tools to implement
