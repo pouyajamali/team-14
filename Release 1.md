@@ -44,9 +44,9 @@ The Team is divided into roles as follows:
 *   Any web-browser that has JavaScript enabled (ie Google Chrome, Firefox etc...)
 
 # **Major Project Deadlines** (Dates have been updated accordingly to current project schedule)
-*   ~~_January 18_  Release 0 Presentation Completed
-*   ~~_January 25_  Chip8 Emulator completed and ready for automated testing
-*   ~~**_February 4_  Actual finsih date of of Emulator due to inexperience with JavaScript** 
+*   ~~_January 18_  Release 0 Presentation Completed~~
+*   ~~_January 25_  Chip8 Emulator completed and ready for automated testing~~
+*   ~~**_February 4_  Actual finsih date of of Emulator due to inexperience with JavaScript** ~~
 *   _February 12_  Automated testing ready to be implemented
 *   _February 15_  Chip8 Visualizer completed without pause, step forward etc.. capabilities
 *   _February 25_ Chip8 Visualizer fully completed with pause step forward etc.. 
@@ -57,40 +57,44 @@ The Team is divided into roles as follows:
 *   _April 8_     Last minute improvements or potential extra features completed
 	
 # **Testing**
-* ~~For automated testing, our team will be looking into using Selenium, Appium or Jest and will decide once more research on these three tools have been completed.
+* ~~For automated testing, our team will be looking into using Selenium, Appium or Jest and will decide once more research on these three tools have been completed.~~
 
-*   If...else statments will be created by a team member for automated testing. We will still be looking into using either Selenium or Jest if time permits us to use one of those two testing tools.
+*   _If...else statments will be created by a team member for automated testing. We will still be looking into using either Selenium or Jest if time permits us to use one of those two testing tools._
 	
-# **Project Breakdown** - update emulator to being done, also update time needed since new to js
+# **Project Breakdown**
 ## Emulator
-*   Each member will be contributing to the emulator working on different aspects
-  * Three members will work on creating and integrating the opcodes.
-    * 10 hours of work-time needed per person
-  * Two members will work on reading the game files and loading it into the emulators memory  
-    * 10 hours of work-time needed per person
-* **Emulator has been completed but is subject to further improvements later**
+*   ~~Each member will be contributing to the emulator working on different aspects~~
+  * ~~Three members will work on creating and integrating the opcodes.~~
+    * ~~10 hours of work-time needed per person~~
+  * ~~Two members will work on reading the game files and loading it into the emulators memory~~  
+    * ~~10 hours of work-time needed per person~~
+* **_Emulator has been completed but is subject to further improvements later_**
 	
 ## Visualizer
 * Two memebers will be working on this once the emulator is completed
-   * ~~15~~ 20 hours of work-time needed per person
+   * ~~15~~ _20_ hours of work-time needed per person
 
 ## Games
 * Two members will simultaneously work on the two games as others work on the Visualizer
-   * ~~15~~ 20 hours of work-time needed per person
+   * ~~15~~ _20_ hours of work-time needed per person
 	
 ## Chip8 Tool
 * One member will be simultaneously working on implementing a useful tool
-   * ~~20~~ 25 hours of work-time needed per person
+   * ~~20~~ _25_ hours of work-time needed per person
 
 * _Work time needed has been updated due to inexperience with Javascript and based off of how long the emulator actually took._
 
 # **Major Features for Next Release** - update to what next release will include, visulizer testing, maybe extra tool
-~~## Chip8 Emulator
-* An emulator will be completed
-~~* Can operate Chip8 games others have created.
+~~## Chip8 Emulator~~
+* ~~An emulator will be completed~~
+* ~~Can operate Chip8 games others have created.~~
 ## Chip8 Visulizer
 * Visualizer will be completed
 * Be able to see Chip8 games being played in any web browser
+* _Visulizer fully completed including pause, step foward etc.._
+## _Automated Testing_
+* _Automated testing using if...else statments_
+* _Be able to implement changes and quickly test for funtionality_
 
 
   
