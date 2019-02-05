@@ -58,7 +58,7 @@ The Team is divided into roles as follows:
 (Dates have been updated accordingly to current project schedule)
 *   ~~_January 18_  Release 0 Presentation Completed~~
 *   ~~_January 25_  Chip8 Emulator completed and ready for automated testing~~
-*   ~~**_February 4_  Actual finish date of of Emulator due to inexperience with JavaScript** ~~
+*   **~~_February 4_  Actual finish date of of Emulator due to inexperience with JavaScript~~** 
 *   _February 12_  Automated testing ready to be implemented
 *   _February 15_  Chip8 Visualizer completed without pause, step forward etc.. capabilities
 *   _February 25_ Chip8 Visualizer fully completed with pause step forward etc.. 
