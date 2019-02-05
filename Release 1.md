@@ -1,7 +1,14 @@
+# **Table Of Contents**
 [Introduction](#introduction)   
-
-
-
+[Project Organization](#project-organization)   
+[Risk Analysis](#risk-analysis)    
+[Programming Language](#programming-language)    
+[Hardware and Software Requirements](#hardware-and-software-requirements)    
+[Major Project Deadlines](#major-project-deadlines)    
+[Testing](#testing)    
+[Project Breakdown](#project-breakdown)  
+[Major Features for Next Release](#major-features-for-next-release)
+  
 # **Introduction**
 * In this project, our team will create a Chip8 Emulator that is able to run two self created games (and any other Chip8 games) on any javascript enabled web-browser
 
