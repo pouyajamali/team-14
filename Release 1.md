@@ -1,3 +1,7 @@
+[Introduction](#introduction)   
+
+
+
 # **Introduction**
 * In this project, our team will create a Chip8 Emulator that is able to run two self created games (and any other Chip8 games) on any javascript enabled web-browser
 
@@ -10,15 +14,15 @@
 
 # **Project Organization**
 ## Communication and Meeting Times
-* The team will have weekly meetings every **Monday** at **12:30pm** that are flexible with a minimum time of 1 hour. If **additional meeting** times are needed it will be held on **Wednesady** and **Fridays** starting at **12:30** for unexpected circumstances or quick updates
+* The team will have weekly meetings every **Monday** at **12:30pm** that are flexible with a minimum time of 1 hour. If **additional meeting** times are needed it will be held on **Wednesday** and **Fridays** starting at **12:30** for unexpected circumstances or quick updates
 
 * Communication between team members is done via **Slack** and **Whatsapp**
 
 ## Software Repository
-* The team will be using **Github** to implement code and merge each part together
+* The team will be using **GitHub** to implement code and merge each part together
 
 ## Team Software Process
-* Our team has decided to follow the **Incremental Development Style**. We have chosen this since we can make changes to our design and software more eaisly with each release.
+* Our team has decided to follow the **Incremental Development Style**. We have chosen this since we can make changes to our design and software more easily with each release.
 	
 ## Team Roles
 The Team is divided into roles as follows:
@@ -26,7 +30,7 @@ The Team is divided into roles as follows:
 *   Submission Handler - **Vikash Reddy**
 *   Scrum Master - **Jake Kim**
 *   Developer Lead - **Sidharth Miglani**
-*   Test Lead - **Pouya Jamali**
+*   Test Lead - **Pouya Jamali**    
 (These roles are subject to change in future if needed)
 		
 		
@@ -46,7 +50,7 @@ The Team is divided into roles as follows:
 # **Major Project Deadlines** (Dates have been updated accordingly to current project schedule)
 *   ~~_January 18_  Release 0 Presentation Completed~~
 *   ~~_January 25_  Chip8 Emulator completed and ready for automated testing~~
-*   ~~**_February 4_  Actual finsih date of of Emulator due to inexperience with JavaScript** ~~
+*   ~~**_February 4_  Actual finish date of of Emulator due to inexperience with JavaScript** ~~
 *   _February 12_  Automated testing ready to be implemented
 *   _February 15_  Chip8 Visualizer completed without pause, step forward etc.. capabilities
 *   _February 25_ Chip8 Visualizer fully completed with pause step forward etc.. 
@@ -59,7 +63,7 @@ The Team is divided into roles as follows:
 # **Testing**
 * ~~For automated testing, our team will be looking into using Selenium, Appium or Jest and will decide once more research on these three tools have been completed.~~
 
-*   _If...else statments will be created by a team member for automated testing. We will still be looking into using either Selenium or Jest if time permits us to use one of those two testing tools._
+*   _If...else statements will be created by a team member for automated testing. We will still be looking into using either Selenium or Jest if time permits us to use one of those two testing tools._
 	
 # **Project Breakdown**
 ## Emulator
@@ -71,7 +75,7 @@ The Team is divided into roles as follows:
 * **_Emulator has been completed but is subject to further improvements later_**
 	
 ## Visualizer
-* Two memebers will be working on this once the emulator is completed
+* Two members will be working on this once the emulator is completed
    * ~~15~~ _20_ hours of work-time needed per person
 
 ## Games
