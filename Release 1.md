@@ -54,7 +54,8 @@ The Team is divided into roles as follows:
 ## Software Needed
 *   Any web-browser that has JavaScript enabled (ie Google Chrome, Firefox etc...)
 
-# **Major Project Deadlines** (Dates have been updated accordingly to current project schedule)
+# **Major Project Deadlines**   
+(Dates have been updated accordingly to current project schedule)
 *   ~~_January 18_  Release 0 Presentation Completed~~
 *   ~~_January 25_  Chip8 Emulator completed and ready for automated testing~~
 *   ~~**_February 4_  Actual finish date of of Emulator due to inexperience with JavaScript** ~~
