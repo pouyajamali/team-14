@@ -93,8 +93,9 @@ The Team is divided into roles as follows:
 ## Chip8 Tool
 * One member will be simultaneously working on implementing a useful tool
    * ~~20~~ _25_ hours of work-time needed per person
-
-* _Work time needed has been updated due to inexperience with Javascript and based off of how long the emulator actually took._
+   
+        
+ (_Work time needed has been updated due to inexperience with Javascript and based off of how long the emulator actually took._)
 
 # **Major Features for Next Release**
 ~~## Chip8 Emulator~~
