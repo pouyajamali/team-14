@@ -95,7 +95,7 @@ The Team is divided into roles as follows:
 
 * _Work time needed has been updated due to inexperience with Javascript and based off of how long the emulator actually took._
 
-# **Major Features for Next Release** - update to what next release will include, visulizer testing, maybe extra tool
+# **Major Features for Next Release**
 ~~## Chip8 Emulator~~
 * ~~An emulator will be completed~~
 * ~~Can operate Chip8 games others have created.~~
