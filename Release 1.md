@@ -18,7 +18,7 @@
 * The team will be using **Github** to implement code and merge each part together
 
 ## Team Software Process
-* Our team has decided to follow the **Incremental Development Style**. We have chosen this since we can make changes to our design and software more eaisly with each release. (expand)
+* Our team has decided to follow the **Incremental Development Style**. We have chosen this since we can make changes to our design and software more eaisly with each release.
 	
 ## Team Roles
 The Team is divided into roles as follows:
@@ -43,11 +43,11 @@ The Team is divided into roles as follows:
 ## Software Needed
 *   Any web-browser that has JavaScript enabled (ie Google Chrome, Firefox etc...)
 
-# **Major Project Deadlines** will need change
-*   _January 18_  Release 0 Presentation Completed
-*   _January 25_  Chip8 Emulator completed and ready for automated testing
-*   _February 4_  Actual finsih date of of Emulator due to inexperience with JavaScript 
-*   _February 12_  Automated testing ready to be implemented -- change dates from here
+# **Major Project Deadlines** (Dates have been updated accordingly to current project schedule)
+*   ~~_January 18_  Release 0 Presentation Completed
+*   ~~_January 25_  Chip8 Emulator completed and ready for automated testing
+*   ~~**_February 4_  Actual finsih date of of Emulator due to inexperience with JavaScript** 
+*   _February 12_  Automated testing ready to be implemented
 *   _February 15_  Chip8 Visualizer completed without pause, step forward etc.. capabilities
 *   _February 25_ Chip8 Visualizer fully completed with pause step forward etc.. 
 *   _February 28_ Start of creation of two games and Extra helpful tools to implement
@@ -56,8 +56,10 @@ The Team is divided into roles as follows:
 *   _March 29_    Completion of Release 4 presentation
 *   _April 8_     Last minute improvements or potential extra features completed
 	
-# **Testing** - update to say may use if statments
-* For automated testing, our team will be looking into using Selenium, Appium or Jest and will decide once more research on these three tools have been completed.
+# **Testing**
+* ~~For automated testing, our team will be looking into using Selenium, Appium or Jest and will decide once more research on these three tools have been completed.
+
+*   If...else statments will be created by a team member for automated testing. We will still be looking into using either Selenium or Jest if time permits us to use one of those two testing tools.
 	
 # **Project Breakdown** - update emulator to being done, also update time needed since new to js
 ## Emulator
@@ -66,23 +68,26 @@ The Team is divided into roles as follows:
     * 10 hours of work-time needed per person
   * Two members will work on reading the game files and loading it into the emulators memory  
     * 10 hours of work-time needed per person
+* **Emulator has been completed but is subject to further improvements later**
 	
 ## Visualizer
 * Two memebers will be working on this once the emulator is completed
-   * 15 hours of work-time needed per person
+   * ~~15~~ 20 hours of work-time needed per person
 
 ## Games
 * Two members will simultaneously work on the two games as others work on the Visualizer
-   * 15 hours of work-time needed per person
+   * ~~15~~ 20 hours of work-time needed per person
 	
 ## Chip8 Tool
 * One member will be simultaneously working on implementing a useful tool
-   * 20 hours of work-time needed per person
+   * ~~20~~ 25 hours of work-time needed per person
+
+* _Work time needed has been updated due to inexperience with Javascript and based off of how long the emulator actually took._
 
 # **Major Features for Next Release** - update to what next release will include, visulizer testing, maybe extra tool
-## Chip8 Emulator
+~~## Chip8 Emulator
 * An emulator will be completed
-* Can operate Chip8 games others have created.
+~~* Can operate Chip8 games others have created.
 ## Chip8 Visulizer
 * Visualizer will be completed
 * Be able to see Chip8 games being played in any web browser
