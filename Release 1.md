@@ -68,7 +68,7 @@ The Team is divided into roles as follows:
 *   _March 29_    Completion of Release 4 presentation
 *   _April 8_     Last minute improvements or potential extra features completed
 
-## Team Gnatt Chart
+## Team Gantt Chart
 ![](gantt%20chart.png)
 	
 # **Testing**
