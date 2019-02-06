@@ -31,7 +31,7 @@ function skipNIVXeqNN(opcode)
   else
     Processor.PC += 2;
 }
-function kipNIVXneqNN(opcode)
+function s  kipNIVXneqNN(opcode)
 {
   if(Processor.REGISTER_SET[(opcode & 0x0F00) >> 8] != (opcode & 0x00FF))
       Processor.PC += 4;
