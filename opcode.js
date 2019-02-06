@@ -1,87 +1,87 @@
-function C8_clearScreen(opcode)
+function display_clear(opcode)
 {
   Processor.ClearVRAM();
   Processor.DRAW_FLAG = true;
   Processor.PC += 2;
 }
 
-function C8_return(opcode)
+function return_routine(opcode)
 {
   --Processor.SP;
   Processor.PC = Processor.STACK[Processor.SP];
   Processor.PC += 2;
 }
 
-function C8_jumpToAdress(opcode)
+function jumpToNNN(opcode)
 {
    Processor.PC = opcode & 0x0FFF;
 }
 
-function C8_callFunction(opcode)
+function callFunction(opcode)
 {
   Processor.STACK[Processor.SP] = Processor.PC;
   ++Processor.SP;
   Processor.PC = opcode & 0x0FFF;
 }
 
-function C8_skipNextInstructionVXeqNN(opcode)
+function skipNIVXeqNN(opcode)
 {
   if(Processor.REGISTER_SET[(opcode & 0x0F00) >> 8] == (opcode & 0x00FF))
     Processor.PC += 4;
   else
     Processor.PC += 2;
 }
-function C8_skipNextInstructionVXneqNN(opcode)
+function kipNIVXneqNN(opcode)
 {
   if(Processor.REGISTER_SET[(opcode & 0x0F00) >> 8] != (opcode & 0x00FF))
       Processor.PC += 4;
     else
       Processor.PC += 2;
 }
-function C8_skipNextInstructionVXeqVY(opcode)
+function skipNIVXeqVY(opcode)
 {
   if(Processor.REGISTER_SET[(opcode & 0x0F00) >> 8] == Processor.REGISTER_SET[(opcode & 0x00F0) >> 4])
       Processor.PC += 4;
     else
       Processor.PC += 2;
 }
-function C8_SetRegisterVXtoNN(opcode)
+function setRegVXtoNN(opcode)
 {
   Processor.REGISTER_SET[(opcode & 0x0F00) >> 8] = opcode & 0x00FF;
   Processor.PC += 2;
 }
 
-function C8_AddNNtoVX(opcode)
+function addNNtoVX(opcode)
 {
   Processor.REGISTER_SET[(opcode & 0x0F00) >> 8] += opcode & 0x00FF;
   Processor.PC += 2;
 }
 
-function C8_SetVXtoVY(opcode)
+function setVXtoVY(opcode)
 {
   Processor.REGISTER_SET[(opcode & 0x0F00) >> 8] = Processor.REGISTER_SET[(opcode & 0x00F0) >> 4];
   Processor.PC += 2;
 }
 
-function C8_SetVXtoVXorVY(opcode)
+function setVXtoVXorVY(opcode)
 {
   Processor.REGISTER_SET[(opcode & 0x0F00) >> 8] |= Processor.REGISTER_SET[(opcode & 0x00F0) >> 4];
   Processor.PC += 2;
 }
 
-function C8_SetVXtoVXandVY(opcode)
+function setVXtoVXandVY(opcode)
 {
   Processor.REGISTER_SET[(opcode & 0x0F00) >> 8] &= Processor.REGISTER_SET[(opcode & 0x00F0) >> 4];
   Processor.PC += 2;
 }
 
-function C8_SetVXtoVXxorVY(opcode)
+function setVXtoVXxorVY(opcode)
 {
   Processor.REGISTER_SET[(opcode & 0x0F00) >> 8] ^= Processor.REGISTER_SET[(opcode & 0x00F0) >> 4];
   Processor.PC += 2;
 }
 // VF trickstery
-function C8_AddVYtoVX(opcode)
+function addVYtoVX(opcode)
 {
   if(Processor.REGISTER_SET[(opcode & 0x00F0) >> 4] > (0xFF - Processor.REGISTER_SET[(opcode & 0x0F00) >> 8]))
     Processor.REGISTER_SET[0xF] = 1; //carry
@@ -92,7 +92,7 @@ function C8_AddVYtoVX(opcode)
 }
 
 // VF trickstery
-function C8_SubstractVYfromVX(opcode)
+function substractVYfromVX(opcode)
 {
   if(Processor.REGISTER_SET[(opcode & 0x00F0) >> 4] > Processor.REGISTER_SET[(opcode & 0x0F00) >> 8])
     Processor.REGISTER_SET[0xF] = 0; // there is a borrow
@@ -103,14 +103,14 @@ function C8_SubstractVYfromVX(opcode)
 }
 
 // VF trickstery
-function C8_ShiftVXRight(opcode)
+function shiftVXRight(opcode)
 {
   Processor.REGISTER_SET[0xF] = Processor.REGISTER_SET[(opcode & 0x0F00) >> 8] & 0x1;
   Processor.REGISTER_SET[(opcode & 0x0F00) >> 8] >>= 1;
   Processor.PC += 2;
 }
 // VF trickstery
-function C8_SetVXtoVYminusVX(opcode)
+function setVXtoVYminusVX(opcode)
 {
   if(Processor.REGISTER_SET[(opcode & 0x0F00) >> 8] > Processor.REGISTER_SET[(opcode & 0x00F0) >> 4])	// VY-VX
     Processor.REGISTER_SET[0xF] = 0; // there is a borrow
@@ -120,14 +120,14 @@ function C8_SetVXtoVYminusVX(opcode)
   Processor.PC += 2;
 }
 
-function C8_ShiftVXLeft(opcode)
+function shiftVXLeft(opcode)
 {
   Processor.REGISTER_SET[0xF] = Processor.REGISTER_SET[(opcode & 0x0F00) >> 8] >> 7;
   Processor.REGISTER_SET[(opcode & 0x0F00) >> 8] <<= 1;
   Processor.PC += 2;
 }
 
-function C8_skipNextInstructionVXneqVY(opcode)
+function skipNIVXneqVY(opcode)
 {
   if(Processor.REGISTER_SET[(opcode & 0x0F00) >> 8] != Processor.REGISTER_SET[(opcode & 0x00F0) >> 4])
     Processor.PC += 4;
@@ -135,18 +135,18 @@ function C8_skipNextInstructionVXneqVY(opcode)
     Processor.PC += 2;
 }
 
-function C8_SetItoAdress(opcode)
+function setItoAdress(opcode)
 {
   Processor.I = opcode & 0x0FFF;
   Processor.PC += 2;
 }
 
-function C8_JumpToAdressPlusV0(opcode)
+function jumpToAdressPlusV0(opcode)
 {
     Processor.PC = (opcode & 0x0FFF) + Processor.REGISTER_SET[0];
 }
 
-function C8_SetVxToRandomAndNN(opcode)
+function setVxToRandomAndNN(opcode)
 {
   var regidx = (opcode & 0xF00) >>> 8;
   var add = opcode & 0x0FF;
@@ -157,7 +157,7 @@ function C8_SetVxToRandomAndNN(opcode)
 }
 
 // VF trickstery
-function C8_DrawSprite(opcode)
+function drawSprite(opcode)
 {
   var x = Processor.REGISTER_SET[(opcode & 0x0F00) >> 8];
   var y = Processor.REGISTER_SET[(opcode & 0x00F0) >> 4];
@@ -184,13 +184,13 @@ function C8_DrawSprite(opcode)
   Processor.PC += 2;
 }
 
-function C8_SetVXtoDelayRegister(opcode)
+function setVXtoDR(opcode)
 {
   Processor.REGISTER_SET[(opcode & 0x0F00) >> 8] = Processor.DELAY_REGISTER;
   Processor.PC += 2;
 }
 
-function C8_WaitKeyPressAndStoreInVX(opcode)
+function waitForKey(opcode)
 {
   var keyPress = false;
   for(var i = 0; i < 16; ++i)
@@ -207,19 +207,19 @@ function C8_WaitKeyPressAndStoreInVX(opcode)
   Processor.PC += 2;
 }
 
-function C8_SetDelayRegisterToVX(opcode)
+function setDRToVX(opcode)
 {
   Processor.DELAY_REGISTER = Processor.REGISTER_SET[(opcode & 0x0F00) >> 8];
   Processor.PC += 2;
 }
 
-function C8_SetSoundRegisterToVX(opcode)
+function setSRToVX(opcode)
 {
   Processor.SOUND_REGISTER = Processor.REGISTER_SET[(opcode & 0x0F00) >> 8];
   Processor.PC += 2;
 }
 
-function C8_AddVXtoI(opcode)
+function addVXtoI(opcode)
 {
   if(Processor.I + Processor.REGISTER_SET[(opcode & 0x0F00) >> 8] > 0xFFF)
     Processor.REGISTER_SET[0xF] = 1;
@@ -229,13 +229,13 @@ function C8_AddVXtoI(opcode)
   Processor.PC += 2;
 }
 
-function C8_SetIToLocationOfSpriteFromVX(opcode)
+function setIToLocationOfSpriteFromVX(opcode)
 {
     Processor.I = Processor.REGISTER_SET[(opcode & 0x0F00) >> 8] * 0x5;
     Processor.PC += 2;
 }
 
-function C8_StoreBCDofVXatI(opcode)
+function storeBCDofVXatI(opcode)
 {
   Processor.MEMORY[Processor.I]     = Processor.REGISTER_SET[(opcode & 0x0F00) >> 8] / 100;
   Processor.MEMORY[Processor.I + 1] = (Processor.REGISTER_SET[(opcode & 0x0F00) >> 8] / 10) % 10;
@@ -243,7 +243,7 @@ function C8_StoreBCDofVXatI(opcode)
   Processor.PC += 2;
 }
 
-function C8_StoreV0toVXInMemoryStartingAtI(opcode)
+function storeV0toVXInMemory(opcode)
 {
   for (var i = 0; i <= ((opcode & 0x0F00) >> 8); ++i)
     Processor.MEMORY[Processor.I + i] = Processor.REGISTER_SET[i];
@@ -252,7 +252,7 @@ function C8_StoreV0toVXInMemoryStartingAtI(opcode)
   Processor.PC += 2;
 }
 
-function C8_FillV0toVXWithValuesFromMemoryAtI(opcode)
+function fillV0toVXWithMemory(opcode)
 {
   for (var i = 0; i <= ((opcode & 0x0F00) >> 8); ++i)
     Processor.REGISTER_SET[i] = Processor.MEMORY[Processor.I + i];
@@ -261,7 +261,7 @@ function C8_FillV0toVXWithValuesFromMemoryAtI(opcode)
   Processor.PC += 2;
 }
 
-function C8_SkipNextInstructionIfTheKeyStoredInVXisPressed(opcode)
+function skipNIIfKeyInVXPressed(opcode)
 {
   if(Processor.KEYBOARD_BUFFER[Processor.REGISTER_SET[(opcode & 0x0F00) >> 8]] != 0)
     Processor.PC += 4;
@@ -269,7 +269,7 @@ function C8_SkipNextInstructionIfTheKeyStoredInVXisPressed(opcode)
     Processor.PC += 2;
 }
 
-function C8_SkipNextInstructionIfTheKeyStoredInVXisNOTPressed(opcode)
+function skipNIIfKeyInVXNOTPressed(opcode)
 {
   if(Processor.KEYBOARD_BUFFER[Processor.REGISTER_SET[(opcode & 0x0F00) >> 8]] == 0)
     Processor.PC += 4;
