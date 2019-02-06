@@ -67,6 +67,9 @@ The Team is divided into roles as follows:
 *   _March 20_    Second game completed
 *   _March 29_    Completion of Release 4 presentation
 *   _April 8_     Last minute improvements or potential extra features completed
+
+## Team Gnatt Chart
+![](gantt%20chart.png)
 	
 # **Testing**
 * ~~For automated testing, our team will be looking into using Selenium, Appium or Jest and will decide once more research on these three tools have been completed.~~
