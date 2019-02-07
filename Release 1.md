@@ -107,6 +107,7 @@ The Team is divided into roles as follows:
    * Kei worked on opcodes 1-11
    * Jake worked on opcodes 12-22
    * Pouya worked on opcodes 23-35
+      * Opcodes implemented using switch cases
    * Sidharth and Vikash worked on Chip8.js to process opcodes
    
      
