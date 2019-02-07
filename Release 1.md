@@ -1,4 +1,4 @@
-# **Table Of Contents**
+# **Table Of Contents** (**NEW**)
 [Introduction](#introduction)   
 [Project Organization](#project-organization)   
 [Risk Analysis](#risk-analysis)    
@@ -57,7 +57,7 @@ The Team is divided into roles as follows:
 *   Any web-browser that has JavaScript enabled (ie Google Chrome, Firefox etc...)
 
 # **Major Project Deadlines**   
-(_Dates have been updated accordingly to current project schedule_)
+(**_Dates have been updated accordingly to current project schedule_**)
 *   ~~_January 18_  Release 0 Presentation Completed~~
 *   ~~_January 25_  Chip8 Emulator completed and ready for automated testing~~
 *   **~~_February 4_  Actual finish date of of Emulator due to inexperience with JavaScript~~** 
@@ -71,13 +71,14 @@ The Team is divided into roles as follows:
 *   _April 8_     Last minute improvements or potential extra features completed
 (_\*Project deadlines are subject to change_)
 
-## Team Gantt Chart
+## Team Gantt Chart (**NEW**)
 ![](gantt%20chart.png)
 	
-# **Testing**
+# **Testing**   
+(_UPDATED_)  
 * ~~For automated testing, our team will be looking into using Selenium, Appium or Jest and will decide once more research on these three tools have been completed.~~
 
-*   (**NEW**)If...else statements will be created by a team member for automated testing. We will still be looking into using either Selenium or Jest if time permits us to use one of those two testing tools._
+*   If...else statements will be created by a team member for automated testing. We will still be looking into using either Selenium or Jest if time permits us to use one of those two testing tools._
 	
 # **Project Breakdown**
 ## Emulator
@@ -88,7 +89,8 @@ The Team is divided into roles as follows:
     * ~~10 hours of work-time needed per person~~
 * **_Emulator has been completed but is subject to further improvements later_**
 	
-## Visualizer
+## Visualizer   
+(_UPDATED_)
 * Two members will be working on this once the emulator is completed
    * ~~15~~ _20_ hours of work-time needed per person
 
@@ -110,20 +112,23 @@ The Team is divided into roles as follows:
    * Jake worked on opcodes 12-22
    * Pouya worked on opcodes 23-35
       * Opcodes implemented using switch cases
+      * Opcodes converted from hexadecimal to binary for use with our emulator
    * Sidharth and Vikash worked on Chip8.js to process opcodes
+   * Test Lead Pouya had reviewed code as each section was added to the main files
+      * Testing done with PONG game found online but this game had an issue mentioned in instructions. This game was also tested with other online emulators and confirmed that the issue was with the game itself as the same error was produced
    
      
 # **Major Features for Next Release**
 ~~## Chip8 Emulator~~
 * ~~An emulator will be completed~~
 * ~~Can operate Chip8 games others have created.~~
-## Chip8 Visulizer
+## Chip8 Visualizer (**UPDATED**)
 * Visualizer will be completed
 * Be able to see Chip8 games being played in any web browser
-* _Visulizer fully completed including pause, step foward etc.._
+* _Visualizer fully completed including pause, step forward etc.._
 ## _Automated Testing_ (**NEW**)
-* _Automated testing using if...else statments_
-* _Be able to implement changes and quickly test for funtionality_
+* _Automated testing using if...else statements_
+* _Be able to implement changes and quickly test for functionality_
 
 
   
