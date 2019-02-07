@@ -1,3 +1,4 @@
+//Function to test code and get error message
 function assert(condition, message) {
     if (!condition) {
         message = message || "Assertion failed";
@@ -8,6 +9,7 @@ function assert(condition, message) {
     }
 }
 
+//Function to convert binary value to hex(4 digits fixed)
 function ConvertToHexStr(opcode)
 {
   var tempStr = (opcode).toString(16).toUpperCase()
@@ -21,6 +23,7 @@ function ConvertToHexStr(opcode)
   return retStr;
 }
 
+//Array storing bitmap font for emulator.
 var CHIP8_FONTSET =[
   0xF0, 0x90, 0x90, 0x90, 0xF0, // 0
   0x20, 0x60, 0x20, 0x20, 0x70, // 1
@@ -40,6 +43,7 @@ var CHIP8_FONTSET =[
   0xF0, 0x80, 0xF0, 0x80, 0x80  // F
 ];
 
+//Definition of Processor object
 Processor =
 {
 REGISTER_SET: new Uint8Array(16), // V_0 -> V_F
@@ -59,7 +63,7 @@ SCREEN:null,
 CANVAS:null,
 KEY_PRESSED:false, // gets set whenever a key is pressed
 INTERVAL:null,
-UpdateTimers: function()
+UpdateTimers: function() //Function within processor to update timer
 {
   if(Processor.DELAY_REGISTER >0)
      Processor.DELAY_REGISTER--;
@@ -74,6 +78,8 @@ UpdateTimers: function()
        console.log("BEEP!\n");
  }
 },
+	
+//Reset function to set all variables to 0, start timers and load fontset
 Reset: function()
 {
   Processor.PC = 0x200;
@@ -106,6 +112,8 @@ Reset: function()
     clearInterval(Processor.INTERVAL);
   Processor.INTERVAL = setInterval(Processor.UpdateTimers,Processor.REFRESH_RATE);
 },
+	
+//Gets unicode from pressed key, sets KEY_PRESSED in Processor object appropriately,  and stores unicode in Processor.KEYBOARD_BUFFER
 OnKey: function(evt)
 {
   var charStr = String.fromCharCode(evt.which);
@@ -128,11 +136,13 @@ OnKey: function(evt)
 
 },
 
+//Clears vram(sets all to 0)
 ClearVRAM : function()
 {
 	  Processor.VRAM = Processor.VRAM.map( ()=> 0 );
 },
 
+//Loads file (Creates new array of 8 bit integers containing file's contents, then calls LoadProgramBuffer function on Processor with newly created array(buffer) as parameter)
 LoadProgram: function(filename)
 {
   var reader = new FileReader();
@@ -145,6 +155,7 @@ LoadProgram: function(filename)
   reader.readAsArrayBuffer(filename);
 },
 
+//Sets program counter at 512(Bottom 512 bytes never used for programs, reserved for interpreter), maps buffer (8 bit array containing input file contents) to appropriate memory location
 LoadProgramBuffer: function(buffer)
 {
     buffer.map((val,idx)=> Processor.MEMORY[idx + 512] = buffer[idx] )
@@ -152,6 +163,7 @@ LoadProgramBuffer: function(buffer)
     Processor.PROGRAM_LOADED = true;
 },
 
+//Mapping of Operations using objects literals and functions
 Exec: function(opcode)
 {
   return {
