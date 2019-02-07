@@ -44,6 +44,7 @@ The Team is divided into roles as follows:
 		
 # **Risk Analysis**
 * For this group project, our main concern is if a Team Member decides to drop the course or an unexpected event happens that causes a team member to leave the group. This can cause drastic changes in our scheduling and project division. To combat this, the work will be divided among the rest of the team members.
+* (NEW) As we had worked on the project, we had discovered another risk which is our inexperience with JavaScript and HTML which had delayed our original schedule that we had wanted
 
 # **Programming Language**
 * This Chip8 Emulator will be coded using **HTML**/**CSS**,**JavaScript**
@@ -56,7 +57,7 @@ The Team is divided into roles as follows:
 *   Any web-browser that has JavaScript enabled (ie Google Chrome, Firefox etc...)
 
 # **Major Project Deadlines**   
-(Dates have been updated accordingly to current project schedule)
+(_Dates have been updated accordingly to current project schedule_)
 *   ~~_January 18_  Release 0 Presentation Completed~~
 *   ~~_January 25_  Chip8 Emulator completed and ready for automated testing~~
 *   **~~_February 4_  Actual finish date of of Emulator due to inexperience with JavaScript~~** 
@@ -68,6 +69,7 @@ The Team is divided into roles as follows:
 *   _March 20_    Second game completed
 *   _March 29_    Completion of Release 4 presentation
 *   _April 8_     Last minute improvements or potential extra features completed
+(_\*Project deadlines are subject to change_)
 
 ## Team Gantt Chart
 ![](gantt%20chart.png)
