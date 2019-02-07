@@ -7,7 +7,7 @@
 [Major Project Deadlines](#major-project-deadlines)    
 [Testing](#testing)    
 [Project Breakdown](#project-breakdown)    
-[What Has Been Completed](#what-has-been-completed)   
+[What Has Been Completed](#what-has-been-completed-new)   
 [Major Features for Next Release](#major-features-for-next-release)
   
 # **Introduction**
@@ -100,8 +100,8 @@ The Team is divided into roles as follows:
 * One member will be simultaneously working on implementing a useful tool
    * ~~20~~ _25_ hours of work-time needed per person
    
-(**NEW**)
-# What Has Been Completed
+
+# What Has Been Completed (**NEW**)
 * Emulator
    * Sidharth was the Lead Developer for this part
    * Kei worked on opcodes 1-11
