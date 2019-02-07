@@ -7,7 +7,7 @@
 [Major Project Deadlines](#major-project-deadlines)    
 [Testing](#testing)    
 [Project Breakdown](#project-breakdown)    
-[What Has Been Completed](#whats-has-been-completed)   
+[What Has Been Completed](#what-has-been-completed)   
 [Major Features for Next Release](#major-features-for-next-release)
   
 # **Introduction**
