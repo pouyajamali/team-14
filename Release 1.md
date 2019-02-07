@@ -74,7 +74,7 @@ The Team is divided into roles as follows:
 # **Testing**
 * ~~For automated testing, our team will be looking into using Selenium, Appium or Jest and will decide once more research on these three tools have been completed.~~
 
-*   _If...else statements will be created by a team member for automated testing. We will still be looking into using either Selenium or Jest if time permits us to use one of those two testing tools._
+*   (**NEW**)If...else statements will be created by a team member for automated testing. We will still be looking into using either Selenium or Jest if time permits us to use one of those two testing tools._
 	
 # **Project Breakdown**
 ## Emulator
@@ -91,15 +91,23 @@ The Team is divided into roles as follows:
 
 ## Games
 * Two members will simultaneously work on the two games as others work on the Visualizer
-   * ~~15~~ _20_ hours of work-time needed per person
+   * ~~15~~ _20_ hours of work-time needed per person   
+     
+ (_Work time needed has been updated due to inexperience with Javascript and based off of how long the emulator actually took._)
 	
 ## Chip8 Tool
 * One member will be simultaneously working on implementing a useful tool
    * ~~20~~ _25_ hours of work-time needed per person
    
-        
- (_Work time needed has been updated due to inexperience with Javascript and based off of how long the emulator actually took._)
-
+# What Has Been Completed (**NEW**)
+* Emulator
+   * Sidharth was the Lead Developer for this part
+   * Kei worked on opcodes 1-11
+   * Jake worked on opcodes 12-22
+   * Pouya worked on opcodes 23-35
+   * Sidharth and Vikash worked on Chip8.js to process opcodes
+   
+     
 # **Major Features for Next Release**
 ~~## Chip8 Emulator~~
 * ~~An emulator will be completed~~
@@ -108,7 +116,7 @@ The Team is divided into roles as follows:
 * Visualizer will be completed
 * Be able to see Chip8 games being played in any web browser
 * _Visulizer fully completed including pause, step foward etc.._
-## _Automated Testing_
+## _Automated Testing_ (**NEW**)
 * _Automated testing using if...else statments_
 * _Be able to implement changes and quickly test for funtionality_
 
