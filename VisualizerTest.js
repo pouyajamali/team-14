@@ -226,11 +226,16 @@ RunCycle: function()
 {
   // Fetch opcode
 
+
   var opcode = Processor.MEMORY[Processor.PC] << 8 | Processor.MEMORY[Processor.PC+ 1]
   var op     = Processor.Exec(opcode);
+  //prints opcode being executed
+  document.getElementById("opcode").innerHTML=ConvertToHexStr(opcode);
+  //document.getElementById("function").innerHTML=ConvertToHexStr(op);
+
   while(op !== undefined)
   {
-    document.getElementById("opcode").innerHTML=ConvertToHexStr(opcode);
+
     op = op(opcode);
 
   }
@@ -258,11 +263,6 @@ DebugRender: function()
 }
 
 
-//function Visualizer(opcode){
-//  document.write(opcode);
-//  var op=Processor.Exec(opcode);
-//  document.write(opcode);
-//}
 
 
 }
