@@ -13,6 +13,8 @@
     </div>
   <script>
 
+	var pause=false;
+
   window.onload = function() {
       var fileInput = document.getElementById('fileInput');
 
@@ -26,16 +28,21 @@
   }
 
   setInterval(function(){
+
     if(Processor.PROGRAM_LOADED == true)
     {
-      Processor.RunCycle();
-      Processor.RunCycle();
-      Processor.RunCycle();
-      Processor.RunCycle();
-      Processor.RunCycle();
-      Processor.RunCycle();
-      Processor.RunCycle();
-      Processor.RunCycle();
+
+			if(pause==false){
+				Processor.RunCycle();
+	      Processor.RunCycle();
+	      Processor.RunCycle();
+	      Processor.RunCycle();
+	      Processor.RunCycle();
+	      Processor.RunCycle();
+	      Processor.RunCycle();
+	      Processor.RunCycle();
+			}
+
 
     }
 
@@ -47,10 +54,18 @@
 
   }, 16);
 
+	function pauseEmu() {
+  	pause=true;
+	}
+	function continueEmu() {
+  	pause=false;
+	}
 
   </script>
 
 </body>
-<div id="opcode">I will be updated </div>
-
+<div id="opcode">I will be updated (opcode)</div>
+<div id="function">I will be updated (function)</div>
+<button onclick="pauseEmu()">Pause</button>
+<button onclick="continueEmu()">Continue</button>
 </html>
