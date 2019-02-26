@@ -1,0 +1,67 @@
+<html>
+<head>
+  <title>A JavaScript Chip8 System</title>
+  <script src="ops.js"></script>
+  <script src="chip8.js"></script>
+  <style type="text/css">
+  	body{
+  		background: #870000;
+		background: -webkit-linear-gradient(to right, #190A05, #870000);
+		background: linear-gradient(to right, #190A05, #870000);
+  	}
+  	canvas{
+  		background-color: black;
+  	}
+  	h4{
+  		color: white;
+  	}
+  	input{
+  		color: white;
+  	}
+  </style>
+</head>
+
+<body>
+<canvas id="screen" width="960" height="470"></canvas>
+  <div >
+      <h4>Select a game file:</h4>
+      <input type="file" id="fileInput">
+    </div>
+  <script>
+
+  window.onload = function() {
+      var fileInput = document.getElementById('fileInput');
+
+      fileInput.addEventListener('change', function(e) {
+        var file = fileInput.files[0];
+        Processor.Reset();
+        Processor.LoadProgram(file);
+      });
+
+  }
+
+  setInterval(function(){
+    if(Processor.PROGRAM_LOADED == true)
+    {
+      Processor.RunCycle();
+      Processor.RunCycle();
+      Processor.RunCycle();
+      Processor.RunCycle();
+      Processor.RunCycle();
+      Processor.RunCycle();
+      Processor.RunCycle();
+      Processor.RunCycle();
+
+    }
+
+  }, 16);
+
+  setInterval(function(){
+    if(Processor.PROGRAM_LOADED == true)
+      Processor.DebugRender();
+
+  }, 16);
+  </script>
+</body>
+
+</html>
