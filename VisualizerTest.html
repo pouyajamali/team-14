@@ -12,26 +12,18 @@
       <input type="file" id="fileInput">
     </div>
   <script>
-
 	var pause=false;
-
   window.onload = function() {
       var fileInput = document.getElementById('fileInput');
-
       fileInput.addEventListener('change', function(e) {
         var file = fileInput.files[0];
         Processor.Reset();
         Processor.LoadProgram(file);
       });
-
-
   }
-
   setInterval(function(){
-
     if(Processor.PROGRAM_LOADED == true)
     {
-
 			if(pause==false){
 				Processor.RunCycle();
 	      Processor.RunCycle();
@@ -43,22 +35,24 @@
 	      Processor.RunCycle();
 			}
 
-
     }
-
   }, 16);
-
   setInterval(function(){
     if(Processor.PROGRAM_LOADED == true)
       Processor.DebugRender();
-
   }, 16);
-
 	function pauseEmu() {
   	pause=true;
 	}
+
 	function continueEmu() {
   	pause=false;
+	}
+
+	function next(){
+		if(pause==true){
+			Processor.RunCycle();
+		}
 	}
 
   </script>
@@ -68,4 +62,5 @@
 <div id="function">I will be updated (function)</div>
 <button onclick="pauseEmu()">Pause</button>
 <button onclick="continueEmu()">Continue</button>
+<button onclick="next()">Next</button>
 </html>
