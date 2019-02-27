@@ -229,6 +229,9 @@ RunCycle: function()
   // Fetch opcode
   var opcode = Processor.MEMORY[Processor.PC] << 8 | Processor.MEMORY[Processor.PC+ 1]
   var op     = Processor.Exec(opcode);
+  //pass opcode to html to display
+  document.getElementById("opcode").innerHTML=ConvertToHexStr(opcode);	
+	
   while(op !== undefined)
   {
     op = op(opcode);
