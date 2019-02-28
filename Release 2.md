@@ -58,18 +58,18 @@ The Team is divided into roles as follows:
 
 # **Major Project Deadlines**   
 (**_Dates have been updated accordingly to current project schedule_**)
-*   ~~_January 18_  Release 0 Presentation Completed~~
-*   ~~_January 25_  Chip8 Emulator completed and ready for automated testing~~
-*   **~~_February 4_  Actual finish date of of Emulator due to inexperience with JavaScript~~** 
-*   ~~_February 12_  Automated testing ready to be implemented~~
-*   ~~_February 15_  Chip8 Visualizer completed without pause, step forward etc.. capabilities~~
-*   _February 25_ Chip8 Visualizer partially completed with pause and step forward features (UPDATED)
-*   _February 28_ Start of creation of two games and Extra helpful tools to implement
-*   _March 6_    Chip8 Visualizer completed with step back feature (NEW) 
-*   _March 13_    One game and extra tool completed
-*   _March 20_    Second game completed
-*   _March 29_    Completion of Release 4 presentation
-*   _April 8_     Last minute improvements or potential extra features completed
+*  - [x] _January 18_  Release 0 Presentation Completed
+*  - [x] _January 25_  Chip8 Emulator completed and ready for automated testing
+*  - [x] _February 4_  Actual finish date of of Emulator due to inexperience with JavaScript
+*  - [x] _February 12_  Automated testing ready to be implemented
+*  - [x] _February 15_  Chip8 Visualizer completed without pause, step forward etc.. capabilities
+*  - [x]  _February 25_ Chip8 Visualizer partially completed with pause and step forward features (UPDATED)
+*  - [ ] _February 28_ Start of creation of two games and Extra helpful tools to implement
+*  - [ ] _March 6_    Chip8 Visualizer completed with step back feature (NEW) 
+*  - [ ] _March 13_    One game and extra tool completed
+*  - [ ] _March 20_    Second game completed
+*  - [ ] _March 29_    Completion of Release 4 presentation
+*  - [ ] _April 8_     Last minute improvements or potential extra features completed
 (_\*Project deadlines are subject to change_)
 
 ## Team Gantt Chart
