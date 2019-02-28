@@ -138,9 +138,9 @@ The Team is divided into roles as follows:
 ## ~~Chip8 Emulator~~
 * ~~An emulator will be completed~~
 * ~~Can operate Chip8 games others have created.~~
-~~## _Automated Testing_~~
-~~* _Automated testing using if...else statements_~~
-~~* _Be able to implement changes and quickly test for functionality_~~
+## ~~_Automated Testing_~~
+* ~~_Automated testing using if...else statements_~~
+* ~~_Be able to implement changes and quickly test for functionality_~~
 ## Chip8 Visualizer
 * Visualizer will be completed
 * Be able to see Chip8 games being played in any web browser
