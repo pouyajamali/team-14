@@ -21,13 +21,19 @@
     input{
       color: white;
     }
+    h4{
+      color: white;
+    }
+    id{
+      color: white;
+    }
   </style>
 
 </head>
 <body>
 <canvas id="screen" width="960" height="470"></canvas>
   <div>
-      Select a game file:
+      <h4>Select a game file:</h4>
       <input type="file" id="fileInput">
     </div>
   <script>
@@ -71,14 +77,14 @@
     }
   }
   </script>
-
-</body>
-<div id="opcode">I will be updated (opcode)</div>
-<div id="function">I will be updated (function)</div>
-<div id="memory">I will be updated (memory)</div>
-<div id="stack">I will be updated (stack)</div>
+<div id="opcode" style="background-color:white">I will be updated (opcode)</div>
+<div id="function" style="background-color:white">I will be updated (function)</div>
+<div id="memory" style="background-color:white">I will be updated (memory)</div>
+<div id="stack" style="background-color:white">I will be updated (stack)</div>
 <button onclick="pauseEmu()">Pause</button>
 <button onclick="continueEmu()">Continue</button>
 <button onclick="next()">Next</button>
-</html>
 
+</body>
+
+</html>
