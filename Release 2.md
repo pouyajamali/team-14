@@ -103,7 +103,7 @@ The Team is divided into roles as follows:
 	
 ## Chip8 Tool
 * One member will be simultaneously working on implementing a useful tool
-* fill in later.......
+* We have decided to create an assembler as our tool to help create our Chip8 games
    * ~~20~~ _25_ hours of work-time needed per person
    
 
@@ -119,14 +119,18 @@ The Team is divided into roles as follows:
    * Test Lead Pouya had reviewed code as each section was added to the main files
       * Testing done with PONG game found online but this game had an issue mentioned in instructions. This game was also tested with other online emulators and confirmed that the issue was with the game itself as the same error was produced
 
-* Vizualizer
+* Vizualizer (**NEW**)
    * Kei and Jake are the Lead Developers in this aspect
    * Kei has completed the pause and step forward features
-   * Jake has completed the....
-   * Sidharth was supporting these two as needed
+   * Jake has completed the output of the registers and opcodes
+
+* Webpage design (**NEW**)
+   * Sidharth was the sole developer in this section
+   * Using CSS, Sidharth had created a better looking page for our game
+   * This section will be updated to accomandate for future needs
    
-* Automated Testing For Emulator
-   * Vikash was the Lead Developer for this part
+* Automated Testing For Emulator (**NEW**)
+   * Vikash is the Lead Developer for this part
    * Using if...else statments to create test
    * Pouya was support for this section
      
