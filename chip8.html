@@ -24,9 +24,6 @@
     h4{
       color: white;
     }
-    id{
-      color: white;
-    }
   </style>
 
 </head>
@@ -78,10 +75,15 @@
   }
   </script>
 </body>
-<div id="opcode" style="background-color:white">I will be updated (opcode)</div>
-<div id="function" style="background-color:white">I will be updated (function)</div>
-<div id="memory" style="background-color:white">I will be updated (memory)</div>
-<div id="stack" style="background-color:white">I will be updated (stack)</div>
+<div style="color: white" >OPCODE:</div>
+<div id="opcode" style="color: white">I will be updated (opcode)</div>
+<div style="color: white" >FUNCTION:</div>
+  <div id="function" style="color: white">I will be updated (function)</div>
+  <div style="color: white" >MEMORY:</div>
+  <div id="memory" style="color: white">I will be updated (memory)</div>
+  <div style="color: white" >STACK:</div>
+  <div id="stack" style="color: white">I will be updated (stack)</div>
+</div>
 <button onclick="pauseEmu()">Pause</button>
 <button onclick="continueEmu()">Continue</button>
 <button onclick="next()">Next</button>
