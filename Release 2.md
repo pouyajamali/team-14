@@ -103,7 +103,7 @@ The Team is divided into roles as follows:
 	
 ## Chip8 Tool
 * One member will be simultaneously working on implementing a useful tool
-* We have decided to create an assembler as our tool to help create our Chip8 games
+* We have decided to create an assembler as our tool to help create our Chip8 games (**NEW**)
    * _25_ hours of work-time needed per person
    
 
@@ -122,16 +122,26 @@ The Team is divided into roles as follows:
 * Vizualizer (**NEW**)
    * Kei and Jake are the Lead Developers in this aspect
    * Kei has completed the pause and step forward features
+      * Pause stops program from continueing the program run cycle
+      * Step Forward only works when program is paused, runs the run cycle once and then stops until pressed again
    * Jake has completed the output of the registers and opcodes
+      * Shows current opcode being executed
+      * Shows current function being executed
+      * Shows Memory at location I of the processor memory
+      * Shoes Stack at location the stack pointer is pointing to
 
 * Webpage design (**NEW**)
    * Sidharth was the sole developer in this section
    * Using CSS, Sidharth had created a better looking page for our game
+      * Used premade colours for background
    * This section will be updated to accomandate for future needs
+      * Will be adding more text boxes for a cleaner design
    
 * Automated Testing For Emulator (**NEW**)
    * Vikash is the Lead Developer for this part
    * Using if...else statments to create test
+      * Looks to see if correct function is being called when certain opcode is passed
+      * Also checks to see if program counter is also incremented correctly
    * Pouya was support for this section
      
 # **Major Features for Next Release** (**UPDATED**)
@@ -144,11 +154,14 @@ The Team is divided into roles as follows:
 ## Chip8 Visualizer
 * Visualizer will be completed
 * Be able to see Chip8 games being played in any web browser
+    * Will be adding in step back feature
 * _Visualizer fully completed including pause, step forward etc.._
-## Extra Tool (NEW)
+## Extra Tool (**NEW**)
 * Extra tool completed to help create games
-## First Game (NEW)
+* Creating an assembler to help make games
+## First Game (**NEW**)
 * First game completed
+* First game idea is pong but is subject to change
 * May still have some bugs but playable
 
 
