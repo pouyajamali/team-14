@@ -146,7 +146,7 @@ The Team is divided into roles as follows:
 * Be able to see Chip8 games being played in any web browser
 * _Visualizer fully completed including pause, step forward etc.._
 ## Extra Tool (NEW)
-*Extra tool completed to help create games
+* Extra tool completed to help create games
 ## First Game (NEW)
 * First game completed
 * May still have some bugs but playable
