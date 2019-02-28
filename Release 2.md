@@ -135,7 +135,7 @@ The Team is divided into roles as follows:
    * Pouya was support for this section
      
 # **Major Features for Next Release** (**UPDATED**)
-~~## Chip8 Emulator~~
+## ~~Chip8 Emulator~~
 * ~~An emulator will be completed~~
 * ~~Can operate Chip8 games others have created.~~
 ~~## _Automated Testing_~~
