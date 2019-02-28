@@ -1,67 +1,84 @@
+
+    
+<!DOCTYPE html>
 <html>
 <head>
-  <title>A JavaScript Chip8 System</title>
-  <script src="ops.js"></script>
-  <script src="chip8.js"></script>
-  <style type="text/css">
-  	body{
-  		background: #870000;
-		background: -webkit-linear-gradient(to right, #190A05, #870000);
-		background: linear-gradient(to right, #190A05, #870000);
-  	}
-  	canvas{
-  		background-color: black;
-  	}
-  	h4{
-  		color: white;
-  	}
-  	input{
-  		color: white;
-  	}
+  <title></title>
+  <script src="opcode.js"></script>
+  <script src="Chip8.js"></script>
+   <style type="text/css">
+    body{
+      background: #870000;
+    background: -webkit-linear-gradient(to right, #190A05, #870000);
+    background: linear-gradient(to right, #190A05, #870000);
+    }
+    canvas{
+      background-color: black;
+    }
+    h4{
+      color: white;
+    }
+    input{
+      color: white;
+    }
   </style>
-</head>
 
+</head>
 <body>
 <canvas id="screen" width="960" height="470"></canvas>
-  <div >
-      <h4>Select a game file:</h4>
+  <div>
+      Select a game file:
       <input type="file" id="fileInput">
     </div>
   <script>
-
+  var pause=false;
   window.onload = function() {
       var fileInput = document.getElementById('fileInput');
-
       fileInput.addEventListener('change', function(e) {
         var file = fileInput.files[0];
         Processor.Reset();
         Processor.LoadProgram(file);
       });
-
   }
-
   setInterval(function(){
     if(Processor.PROGRAM_LOADED == true)
     {
-      Processor.RunCycle();
-      Processor.RunCycle();
-      Processor.RunCycle();
-      Processor.RunCycle();
-      Processor.RunCycle();
-      Processor.RunCycle();
-      Processor.RunCycle();
-      Processor.RunCycle();
-
+      if(pause==false){
+        Processor.RunCycle();
+        Processor.RunCycle();
+        Processor.RunCycle();
+        Processor.RunCycle();
+        Processor.RunCycle();
+        Processor.RunCycle();
+        Processor.RunCycle();
+        Processor.RunCycle();
+      }
     }
-
   }, 16);
-
   setInterval(function(){
     if(Processor.PROGRAM_LOADED == true)
       Processor.DebugRender();
-
   }, 16);
+  function pauseEmu() {
+    pause=true;
+  }
+  function continueEmu() {
+    pause=false;
+  }
+  function next(){
+    if(pause==true){
+      Processor.RunCycle();
+    }
+  }
   </script>
-</body>
 
+</body>
+<div id="opcode">I will be updated (opcode)</div>
+<div id="function">I will be updated (function)</div>
+<div id="memory">I will be updated (memory)</div>
+<div id="stack">I will be updated (stack)</div>
+<button onclick="pauseEmu()">Pause</button>
+<button onclick="continueEmu()">Continue</button>
+<button onclick="next()">Next</button>
 </html>
+
