@@ -228,16 +228,19 @@ RunCycle: function()
 {
   // Fetch opcode
   var opcode = Processor.MEMORY[Processor.PC] << 8 | Processor.MEMORY[Processor.PC+ 1]
-  var op     = Processor.Exec(opcode);
-  //pass opcode to html to display
-  document.getElementById("opcode").innerHTML=ConvertToHexStr(opcode);	
-	
+ 
+  var op = Processor.Exec(opcode);
+  document.getElementById("opcode").innerHTML=ConvertToHexStr(opcode);
+  document.getElementById("function").innerHTML=ConvertToHexStr(op.name);
+  document.getElementById("memory").innerHTML=ConvertToHexStr(Processor.MEMORY[Processor.I]);
+  document.getElementById("stack").innerHTML=ConvertToHexStr(Processor.STACK[Processor.SP]);
   while(op !== undefined)
   {
     op = op(opcode);
   }
 
 },
+
 DebugRender: function()
 {
   if(Processor.DRAW_FLAG == false)
