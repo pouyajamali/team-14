@@ -93,18 +93,18 @@ The Team is divided into roles as follows:
 	
 ## Visualizer   
 * Two members will be working on this once the emulator is completed
-   * ~~15~~ _20_ hours of work-time needed per person
+   * _20_ hours of work-time needed per person
 
 ## Games
 * Two members will simultaneously work on the two games as others work on the Visualizer
-   * ~~15~~ _20_ hours of work-time needed per person   
+   * _20_ hours of work-time needed per person   
      
  (_Work time needed has been updated due to inexperience with Javascript and based off of how long the emulator actually took._)
 	
 ## Chip8 Tool
 * One member will be simultaneously working on implementing a useful tool
 * We have decided to create an assembler as our tool to help create our Chip8 games
-   * ~~20~~ _25_ hours of work-time needed per person
+   * _25_ hours of work-time needed per person
    
 
 # What Has Been Completed (**UPDATED**)
