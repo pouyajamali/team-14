@@ -1,18 +1,43 @@
+
+
 <!DOCTYPE html>
 <html>
 <head>
-	<title></title>
-	<script src="opcode.js"></script>
+  <title></title>
+  <script src="opcode.js"></script>
   <script src="Chip8.js"></script>
+   <style type="text/css">
+    body{
+      background: #870000;
+    background: -webkit-linear-gradient(to right, #190A05, #870000);
+    background: linear-gradient(to right, #190A05, #870000);
+    }
+    canvas{
+      background-color: black;
+    }
+    h4{
+      color: white;
+    }
+    input{
+      color: white;
+    }
+    h4{
+      color: white;
+    }
+  </style>
+
 </head>
 <body>
-<canvas id="screen" width="1080" height="760"></canvas>
+<canvas id="screen" width="960" height="470"></canvas>
   <div>
-      Select a game file:
+      <h4>Select a game file:</h4>
       <input type="file" id="fileInput">
     </div>
   <script>
-	var pause=false;
+  var test=0;
+  var pause=false;
+  var prevFlag=false;
+  var arr=new Array();
   window.onload = function() {
       var fileInput = document.getElementById('fileInput');
       fileInput.addEventListener('change', function(e) {
@@ -24,43 +49,70 @@
   setInterval(function(){
     if(Processor.PROGRAM_LOADED == true)
     {
-			if(pause==false){
-				Processor.RunCycle();
-	      Processor.RunCycle();
-	      Processor.RunCycle();
-	      Processor.RunCycle();
-	      Processor.RunCycle();
-	      Processor.RunCycle();
-	      Processor.RunCycle();
-	      Processor.RunCycle();
-			}
-
+      if(pause==false){
+        Processor.RunCycle();
+        /*Processor.RunCycle();
+        Processor.RunCycle();
+        Processor.RunCycle();
+        Processor.RunCycle();
+        Processor.RunCycle();
+        Processor.RunCycle();
+        Processor.RunCycle();*/
+      }
     }
-  }, 16);
+  }, 300);
   setInterval(function(){
     if(Processor.PROGRAM_LOADED == true)
       Processor.DebugRender();
   }, 16);
-	function pauseEmu() {
-  	pause=true;
-	}
 
-	function continueEmu() {
-  	pause=false;
-	}
+  function pauseEmu() {
+    pause=true;
+  }
+  function continueEmu() {
+    pause=false;
+  }
+  function next(){
+    if(pause==true){
+      Processor.RunCycle();
+    }
+  }
 
-	function next(){
-		if(pause==true){
-			Processor.RunCycle();
-		}
-	}
+  function prev(){
+    if(pause==true){
+      prevFlag=true;
+      Processor.RunCycle();
+    }
+  }
+
+  //Displays opcodes executed so far
+  function displayArr(){
+    var arrPrint;
+    for (i = 0; i < arr.length; i++){
+      arrPrint= arrPrint +", " + ConvertToHexStr(arr[i]);
+    }
+
+    document.getElementById("display").innerHTML = arrPrint;
+  }
 
   </script>
-
 </body>
-<div id="opcode">I will be updated (opcode)</div>
-<div id="function">I will be updated (function)</div>
+<div style="color: white" >OPCODE:</div>
+<div id="opcode" style="color: white">I will be updated (opcode)</div>
+<div style="color: white" >FUNCTION:</div>
+  <div id="function" style="color: white">I will be updated (function)</div>
+  <div style="color: white" >MEMORY:</div>
+  <div id="memory" style="color: white">I will be updated (memory)</div>
+  <div style="color: white" >STACK:</div>
+  <div id="stack" style="color: white">I will be updated (stack)</div>
+
+
+  <div id="test" style="color: white">Test</div>
+  <div id="display" style="color: white">Test</div>
+</div>
 <button onclick="pauseEmu()">Pause</button>
 <button onclick="continueEmu()">Continue</button>
 <button onclick="next()">Next</button>
+<button onclick="prev()">Prev</button>
+<button onclick="displayArr()">Display Array</button>
 </html>
