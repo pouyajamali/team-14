@@ -251,10 +251,11 @@ RunCycle: function()
 
   while(op !== undefined)
   {
-    //Doesnt work when prev pressed
+    //Doesnt work, maybe need to detect previous opcode performed, and reverse it, if possible avoid due to workload
     if(prevFlag==true){
       op=op(prev);
       arr.pop(); //Note: Current print doesnt update popped
+      Processor.PC-=2;
       prevFlag=false;
     }
     else{
