@@ -1,5 +1,3 @@
-
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -34,10 +32,10 @@
       <input type="file" id="fileInput">
     </div>
   <script>
-  var test=0;
   var pause=false;
   var prevFlag=false;
-  var arr=new Array();
+  var i=2;
+
   window.onload = function() {
       var fileInput = document.getElementById('fileInput');
       fileInput.addEventListener('change', function(e) {
@@ -80,8 +78,48 @@
 
   function prev(){
     if(pause==true){
-      prevFlag=true;
-      Processor.RunCycle();
+      //Saves previous "version" of the processor, an
+      arrI.pop();
+      Processor.I=prevI;
+
+      arrSP.pop();
+      Processor.SP=prevSP;
+
+      arrPC.pop();
+      Processor.PC=prevPC;
+
+      arrReg.pop();
+      Processor.REGISTER_SET=prevReg;
+
+      arrStack.pop();
+      Processor.STACK=prevStack;
+
+      arrMem.pop();
+      Processor.MEMORY=prevMem;
+
+      arrVRAM.pop();
+      Processor.VRAM=prevVRAM;
+
+      arrScreen.pop();
+      Processor.SCREEN=prevScreen;
+
+      arrCanv.pop();
+      Processor.CANVAS=prevCanv;
+
+
+
+      prevI=arrI[arrI.length-i];
+      prevSP=arrSP[arrSP.length-i];
+      prevPC=arrPC[arrPC.length-i];
+      prevReg=arrReg[arrReg.length-i];
+      prevStack=arrStack[arrStack.length-i];
+      prevMem=arrMem[arrMem.length-i];
+      prevVRAM=arrVRAM[arrVRAM.length-i];
+      prevScreen=arrScreen[arrScreen.length-i];
+      prevCanv=arrCanv[arrCanv.length-i];
+      i++;
+
+
     }
   }
 
