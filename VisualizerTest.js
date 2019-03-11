@@ -23,6 +23,31 @@ function ConvertToHexStr(opcode)
   return retStr;
 }
 
+var pause=false;
+var prevFlag=false;
+var arr=new Array();
+var arrPC=new Array();
+var arrSP=new Array();
+var arrI=new Array();
+var arrReg=new Array();
+var arrStack=new Array();
+var arrMem=new Array();
+var arrVRAM=new Array();
+var arrScreen=new Array();
+var arrCanv=new Array();
+
+var previous;
+var prevI;
+var prevSP;
+var prevPC;
+var prevReg;
+var prevStack;
+var prevMem;
+var prevVRAM;
+var prevScreen;
+var prevCanv;
+
+
 //Array storing bitmap font for emulator.
 var CHIP8_FONTSET =[
   0xF0, 0x90, 0x90, 0x90, 0xF0, // 0
@@ -235,12 +260,30 @@ RunCycle: function()
 
   //Pushes opcodes being executed into an array
   arr.push(opcode);
+  arrSP.push(Processor.SP);
+  arrI.push(Processor.I);
+  arrPC.push(Processor.PC);
+  arrReg.push(Processor.REGISTER_SET);
+  arrStack.push(Processor.STACK);
+  arrMem.push(Processor.MEMORY);
+  arrVRAM.push(Processor.VRAM);
+  arrScreen.push(Processor.SCREEN);
+  arrCanv.push(Processor.CANVAS);
 
 
   //Displays previous opcode executed
   if(arr.length!=1){
-    var prev=arr[arr.length-2]
-    document.getElementById("test").innerHTML=ConvertToHexStr(prev);
+    previous=arr[arr.length-2];
+    prevI=arrI[arrI.length-2];
+    prevSP=arrSP[arrSP.length-2];
+    prevPC=arrPC[arrPC.length-2];
+    prevReg=arrReg[arrReg.length-2];
+    prevStack=arrStack[arrStack.length-2];
+    prevMem=arrMem[arrMem.length-2];
+    prevVRAM=arrVRAM[arrVRAM.length-2];
+    prevScreen=arrScreen[arrScreen.length-2];
+    prevCanv=arrCanv[arrCanv.length-2];
+    document.getElementById("test").innerHTML=ConvertToHexStr(previous);
   }
 
   document.getElementById("opcode").innerHTML=ConvertToHexStr(opcode);
@@ -251,16 +294,9 @@ RunCycle: function()
 
   while(op !== undefined)
   {
-    //Doesnt work, maybe need to detect previous opcode performed, and reverse it, if possible avoid due to workload
-    if(prevFlag==true){
-      op=op(prev);
-      arr.pop(); //Note: Current print doesnt update popped
-      Processor.PC-=2;
-      prevFlag=false;
-    }
-    else{
+
       op=op(opcode);
-    }
+
 
   }
 
