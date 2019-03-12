@@ -234,10 +234,7 @@ RunCycle: function()
   var opcode = Processor.MEMORY[Processor.PC] << 8 | Processor.MEMORY[Processor.PC+ 1]
   var op     = Processor.Exec(opcode);
   //prints opcode being executed
-  var para = document.createElement("P");
-  var t = document.createTextNode(ConvertToHexStr(opcode));
-  para.appendChild(t);
-  document.getElementById("opcode").appendChild(para);
+  document.getElementById("opcode").innerHTML=ConvertToHexStr(opcode);
 
   document.getElementById("function").innerHTML=op.name;
 
