@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script src="opcode.js"></script>
+  <script src="Visualizer_Print.js"></script>
+</head>
+<style>
+* {
+  box-sizing: border-box;
+}
+
+.column {
+  float: left;
+  width: 200px;
+  padding: 10px;
+	height: 300px;
+}
+
+.longercolumn {
+	float: left;
+	width: 50px;
+	padding: 10px;
+	height: 480px;
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+</style>
+
+<body>
+
+<div class = "row">
+	<canvas id="screen" width="1080" height="560"></canvas>
+	<div class="longercolumn" style="background-color:#eee;">
+		V_0:<br>
+		V_1:<br>
+		V_2:<br>
+		V_3:<br>
+		V_4:<br>
+		V_5:<br>
+		V_6:<br>
+		V_7:<br>
+		V_8:<br>
+		V_9:<br>
+		V_A:<br>
+		V_B:<br>
+		V_C:<br>
+		V_D:<br>
+		V_E:<br>
+		V_F:<br>
+	</div>
+	<div class="longercolumn" style="background-color:#eee;">
+		<div id="v0"></div>
+		<div id="v1"></div>
+		<div id="v2"></div>
+		<div id="v3"></div>
+		<div id="v4"></div>
+		<div id="v5"></div>
+		<div id="v6"></div>
+		<div id="v7"></div>
+		<div id="v8"></div>
+		<div id="v9"></div>
+		<div id="vA"></div>
+		<div id="vB"></div>
+		<div id="vC"></div>
+		<div id="vD"></div>
+		<div id="vE"></div>
+		<div id="vF"></div>
+	</div>
+</div>
+  <div>
+      Select a game file:
+      <input type="file" id="fileInput">
+  </div>
+	<b>
+		Opcodes&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+	  Functions&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+	  Program Counter&emsp;&emsp;&emsp;&emsp;&emsp;
+	  Address pointer&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+	</b>
+  <script>
+
+	var pause=false;
+
+  window.onload = function() {
+      var fileInput = document.getElementById('fileInput');
+
+      fileInput.addEventListener('change', function(e) {
+        var file = fileInput.files[0];
+        Processor.Reset();
+        Processor.LoadProgram(file);
+      });
+  }
+
+  setInterval(function(){
+
+    if(Processor.PROGRAM_LOADED == true)
+    {
+			if(pause==false){
+				Processor.RunCycle();
+	      Processor.RunCycle();
+	      Processor.RunCycle();
+	      Processor.RunCycle();
+	      Processor.RunCycle();
+	      Processor.RunCycle();
+	      Processor.RunCycle();
+	      Processor.RunCycle();
+			}
+    }
+  }, 16);
+
+  setInterval(function(){
+    if(Processor.PROGRAM_LOADED == true)
+      Processor.DebugRender();
+  }, 16);
+
+	function pauseEmu() {
+  	pause=true;
+	}
+	function continueEmu() {
+  	pause=false;
+	}
+
+  </script>
+</body>
+<div class = "row">
+	<div class = "column" style=background-color:#aaa;>
+		<div id="opcode" style="overflow-y: scroll; height:250px;"></div>
+	</div>
+	<div class="column" style="background-color:#bbb;">
+		<div id="function" style="overflow-y: scroll; height:250px;"></div>
+	</div>
+	<div class="column" style="background-color:#ccc;">
+		<div id="programcounter" style="overflow-y: scroll; height:250px;"></div>
+	</div>
+	<div class="column" style="background-color:#ddd;">
+		<div id="addresspointer" style="overflow-y: scroll; height:250px;"></div>
+	</div>
+
+</div>
+
+<button onclick="pauseEmu()">Pause</button>
+<button onclick="continueEmu()">Continue</button>
+</html>
