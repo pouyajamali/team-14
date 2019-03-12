@@ -23,11 +23,29 @@ function ConvertToHexStr(opcode)
   return retStr;
 }
 
-//Function to keep scroll bar at bottom when appending elements
-function updateScroll(){
-    var element = document.getElementById("opcode");
-    element.scrollTop = element.scrollHeight;
-}
+var pause=false;
+var prevFlag=false;
+var arr=new Array();
+var arrPC=new Array();
+var arrSP=new Array();
+var arrI=new Array();
+var arrReg=new Array();
+var arrStack=new Array();
+var arrMem=new Array();
+var arrVRAM=new Array();
+var arrScreen=new Array();
+var arrCanv=new Array();
+
+var previous;
+var prevI;
+var prevSP;
+var prevPC;
+var prevReg;
+var prevStack;
+var prevMem;
+var prevVRAM;
+var prevScreen;
+var prevCanv;
 
 //Array storing bitmap font for emulator.
 var CHIP8_FONTSET =[
@@ -259,12 +277,17 @@ RunCycle: function()
   document.getElementById("vE").innerHTML=Processor.REGISTER_SET[14];
   document.getElementById("vF").innerHTML=Processor.REGISTER_SET[15];
 
+  arr.push(opcode);
+  arrSP.push(Processor.SP);
+  arrI.push(Processor.I);
+  arrPC.push(Processor.PC);
+  arrReg.push(Processor.REGISTER_SET);
+  arrStack.push(Processor.STACK);
+  arrMem.push(Processor.MEMORY);
+  arrVRAM.push(Processor.VRAM);
+  arrScreen.push(Processor.SCREEN);
+  arrCanv.push(Processor.CANVAS);
 
-
-
-
-
-  updateScroll();
 
   while(op !== undefined)
   {
