@@ -4,6 +4,25 @@
 	<title></title>
 	<script src="opcode.js"></script>
   <script src="Visualizer_Print.js"></script>
+  <style type="text/css">
+    body{
+      background: #870000;
+    background: -webkit-linear-gradient(to right, #190A05, #870000);
+    background: linear-gradient(to right, #190A05, #870000);
+    }
+    canvas{
+      background-color: black;
+    }
+    h4{
+      color: white;
+    }
+    input{
+      color: white;
+    }
+    h4{
+      color: white;
+    }
+  </style>
 </head>
 <style>
 * {
@@ -21,7 +40,7 @@
 	float: left;
 	width: 50px;
 	padding: 10px;
-	height: 480px;
+	height: 350px;
 }
 
 .row:after {
@@ -35,8 +54,9 @@
 <body>
 
 <div class = "row">
-	<canvas id="screen" width="1080" height="560"></canvas>
-	<div class="longercolumn" style="background-color:#eee;">
+	<canvas id="screen" width="960" height="470"></canvas>
+	<div class="longercolumn" style="background-color:#190A05;">
+		<b style="color: white">
 		V_0:<br>
 		V_1:<br>
 		V_2:<br>
@@ -54,31 +74,31 @@
 		V_E:<br>
 		V_F:<br>
 	</div>
-	<div class="longercolumn" style="background-color:#eee;">
-		<div id="v0"></div>
-		<div id="v1"></div>
-		<div id="v2"></div>
-		<div id="v3"></div>
-		<div id="v4"></div>
-		<div id="v5"></div>
-		<div id="v6"></div>
-		<div id="v7"></div>
-		<div id="v8"></div>
-		<div id="v9"></div>
-		<div id="vA"></div>
-		<div id="vB"></div>
-		<div id="vC"></div>
-		<div id="vD"></div>
-		<div id="vE"></div>
-		<div id="vF"></div>
+	<div class="longercolumn" style="background-color:#190A05;">
+		<div id="v0" style="color: white"></div>
+		<div id="v1" style="color: white"></div>
+		<div id="v2" style="color: white"></div>
+		<div id="v3" style="color: white"></div>
+		<div id="v4" style="color: white"></div>
+		<div id="v5" style="color: white"></div>
+		<div id="v6" style="color: white"></div>
+		<div id="v7" style="color: white"></div>
+		<div id="v8" style="color: white"></div>
+		<div id="v9" style="color: white"></div>
+		<div id="vA" style="color: white"></div>
+		<div id="vB" style="color: white"></div>
+		<div id="vC" style="color: white"></div>
+		<div id="vD" style="color: white"></div>
+		<div id="vE" style="color: white"></div>
+		<div id="vF" style="color: white"></div>
 	</div>
 </div>
   <div>
       Select a game file:
       <input type="file" id="fileInput">
   </div>
-	<b>
-		Opcodes&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+	<b style="color: white">
+	Opcodes&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
 	  Functions&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
 	  Program Counter&emsp;&emsp;&emsp;&emsp;&emsp;
 	  Address pointer&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
@@ -86,6 +106,8 @@
   <script>
 
 	var pause=false;
+	var prevFlag=false;
+    var i=2;
 
   window.onload = function() {
       var fileInput = document.getElementById('fileInput');
@@ -112,12 +134,12 @@
 	      Processor.RunCycle();
 			}
     }
-  }, 16);
+  }, 8);
 
   setInterval(function(){
     if(Processor.PROGRAM_LOADED == true)
       Processor.DebugRender();
-  }, 16);
+  }, 128);
 
 	function pauseEmu() {
   	pause=true;
@@ -125,25 +147,82 @@
 	function continueEmu() {
   	pause=false;
 	}
+	function next(){
+    	if(pause==true){
+    	  Processor.RunCycle();
+    	}
+  	}
+
+  	function prev(){
+    if(pause==true){
+      //Saves previous "version" of the processor, an
+      arrI.pop();
+      Processor.I=prevI;
+
+      arrSP.pop();
+      Processor.SP=prevSP;
+
+      arrPC.pop();
+      Processor.PC=prevPC;
+
+      arrReg.pop();
+      Processor.REGISTER_SET=prevReg;
+
+      arrStack.pop();
+      Processor.STACK=prevStack;
+
+      arrMem.pop();
+      Processor.MEMORY=prevMem;
+
+      arrVRAM.pop();
+      Processor.VRAM=prevVRAM;
+
+      arrScreen.pop();
+      Processor.SCREEN=prevScreen;
+
+      arrCanv.pop();
+      Processor.CANVAS=prevCanv;
+
+
+
+      prevI=arrI[arrI.length-i];
+      prevSP=arrSP[arrSP.length-i];
+      prevPC=arrPC[arrPC.length-i];
+      prevReg=arrReg[arrReg.length-i];
+      prevStack=arrStack[arrStack.length-i];
+      prevMem=arrMem[arrMem.length-i];
+      prevVRAM=arrVRAM[arrVRAM.length-i];
+      prevScreen=arrScreen[arrScreen.length-i];
+      prevCanv=arrCanv[arrCanv.length-i];
+      i++;
+
+
+    }
+  }
+
+
 
   </script>
 </body>
 <div class = "row">
-	<div class = "column" style=background-color:#aaa;>
-		<div id="opcode" style="overflow-y: scroll; height:250px;"></div>
+	<div class = "column" style="background-color:#aaa;"">
+		<div id="opcode"></div>
 	</div>
 	<div class="column" style="background-color:#bbb;">
-		<div id="function" style="overflow-y: scroll; height:250px;"></div>
+		<div id="function"></div>
 	</div>
 	<div class="column" style="background-color:#ccc;">
-		<div id="programcounter" style="overflow-y: scroll; height:250px;"></div>
+		<div id="programcounter"></div>
 	</div>
 	<div class="column" style="background-color:#ddd;">
-		<div id="addresspointer" style="overflow-y: scroll; height:250px;"></div>
+		<div id="addresspointer"></div>
 	</div>
 
 </div>
 
 <button onclick="pauseEmu()">Pause</button>
 <button onclick="continueEmu()">Continue</button>
+<button onclick="next()">Next</button>
+<button onclick="prev()">Prev</button>
 </html>
+
