@@ -33,8 +33,7 @@
     </div>
   <script>
   var pause=false;
-  var prevFlag=false;
-  var i=2;
+
 
   window.onload = function() {
       var fileInput = document.getElementById('fileInput');
@@ -49,16 +48,16 @@
     {
       if(pause==false){
         Processor.RunCycle();
-        /*Processor.RunCycle();
         Processor.RunCycle();
         Processor.RunCycle();
         Processor.RunCycle();
         Processor.RunCycle();
         Processor.RunCycle();
-        Processor.RunCycle();*/
+        Processor.RunCycle();
+        Processor.RunCycle();
       }
     }
-  }, 300);
+  }, 16);
   setInterval(function(){
     if(Processor.PROGRAM_LOADED == true)
       Processor.DebugRender();
@@ -78,7 +77,12 @@
 
   function prev(){
     if(pause==true){
-      //Saves previous "version" of the processor, an
+      //Saves previous "version" of the processor, and sets processor to previous version when prev clicked.
+      //Currently only first "prev" click works after a pause, suppose to continue working like "next" button
+      //Screen also does not update when going back
+      //Does correctly go back in opcode however(Which is the main function)
+
+      //Removes most recent "version" of processor, and sets processor to its previous state
       arrI.pop();
       Processor.I=prevI;
 
@@ -106,8 +110,17 @@
       arrCanv.pop();
       Processor.CANVAS=prevCanv;
 
+      //Updates opcode/function name being displayed
+      document.getElementById("opcode").innerHTML=ConvertToHexStr(Processor.MEMORY[Processor.PC] << 8 | Processor.MEMORY[Processor.PC+ 1]);
+      document.getElementById("function").innerHTML=ConvertToHexStr(Processor.Exec(Processor.MEMORY[Processor.PC] << 8 | Processor.MEMORY[Processor.PC+ 1]).name);
+
+      //For some reason, crashes on second "click" of prev button during one "pause", can only go back one step per pause
+      //Crashes when reversing certain opcodes for some reason,
 
 
+      //Suppose to iterate through the array which contains previous states of the Processor, to set processor back further then just 1 iteration
+      //For some reason, works when certain opcodes are running and crashes when certains one running
+      i++;
       prevI=arrI[arrI.length-i];
       prevSP=arrSP[arrSP.length-i];
       prevPC=arrPC[arrPC.length-i];
@@ -117,8 +130,6 @@
       prevVRAM=arrVRAM[arrVRAM.length-i];
       prevScreen=arrScreen[arrScreen.length-i];
       prevCanv=arrCanv[arrCanv.length-i];
-      i++;
-
 
     }
   }
