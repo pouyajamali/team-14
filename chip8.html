@@ -1,12 +1,10 @@
-
-    
 <!DOCTYPE html>
 <html>
 <head>
   <title></title>
   <script src="opcode.js"></script>
-  <script src="Chip8.js"></script>
-   <style type="text/css">
+  <script src="Visualizer_Print.js"></script>
+  <style type="text/css">
     body{
       background: #870000;
     background: -webkit-linear-gradient(to right, #190A05, #870000);
@@ -25,25 +23,103 @@
       color: white;
     }
   </style>
-
 </head>
+<style>
+* {
+  box-sizing: border-box;
+}
+
+.column {
+  float: left;
+  width: 200px;
+  padding: 10px;
+  height: 40px;
+}
+
+.longercolumn {
+  float: left;
+  width: 50px;
+  padding: 10px;
+  height: 350px;
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+</style>
+
 <body>
-<canvas id="screen" width="960" height="470"></canvas>
+
+<div class = "row">
+  <canvas id="screen" width="960" height="470"></canvas>
+  <div class="longercolumn" style="background-color:#190A05;">
+    <b style="color: white">
+    V_0:<br>
+    V_1:<br>
+    V_2:<br>
+    V_3:<br>
+    V_4:<br>
+    V_5:<br>
+    V_6:<br>
+    V_7:<br>
+    V_8:<br>
+    V_9:<br>
+    V_A:<br>
+    V_B:<br>
+    V_C:<br>
+    V_D:<br>
+    V_E:<br>
+    V_F:<br>
+  </div>
+  <div class="longercolumn" style="background-color:#190A05;">
+    <div id="v0" style="color: white"></div>
+    <div id="v1" style="color: white"></div>
+    <div id="v2" style="color: white"></div>
+    <div id="v3" style="color: white"></div>
+    <div id="v4" style="color: white"></div>
+    <div id="v5" style="color: white"></div>
+    <div id="v6" style="color: white"></div>
+    <div id="v7" style="color: white"></div>
+    <div id="v8" style="color: white"></div>
+    <div id="v9" style="color: white"></div>
+    <div id="vA" style="color: white"></div>
+    <div id="vB" style="color: white"></div>
+    <div id="vC" style="color: white"></div>
+    <div id="vD" style="color: white"></div>
+    <div id="vE" style="color: white"></div>
+    <div id="vF" style="color: white"></div>
+  </div>
+</div>
   <div>
-      <h4>Select a game file:</h4>
+      Select a game file:
       <input type="file" id="fileInput">
-    </div>
+  </div>
+  <b style="color: white">
+  Opcodes&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+    Functions&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+    Program Counter&emsp;&emsp;&emsp;&emsp;&emsp;
+    Address pointer&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+  </b>
   <script>
+
   var pause=false;
+
+
   window.onload = function() {
       var fileInput = document.getElementById('fileInput');
+
       fileInput.addEventListener('change', function(e) {
         var file = fileInput.files[0];
         Processor.Reset();
         Processor.LoadProgram(file);
       });
   }
+
   setInterval(function(){
+
     if(Processor.PROGRAM_LOADED == true)
     {
       if(pause==false){
@@ -57,11 +133,13 @@
         Processor.RunCycle();
       }
     }
-  }, 16);
+  }, 8);
+
   setInterval(function(){
     if(Processor.PROGRAM_LOADED == true)
       Processor.DebugRender();
-  }, 16);
+  }, 128);
+
   function pauseEmu() {
     pause=true;
   }
@@ -69,22 +147,93 @@
     pause=false;
   }
   function next(){
+      if(pause==true){
+        Processor.RunCycle();
+      }
+    }
+
+    function prev(){
     if(pause==true){
-      Processor.RunCycle();
+      //Saves previous "version" of the processor, and sets processor to previous version when prev clicked.
+      //Currently only first "prev" click works after a pause, suppose to continue working like "next" button
+      //Screen also does not update when going back
+      //Does correctly go back in opcode however(Which is the main function)
+      //Removes most recent "version" of processor, and sets processor to its previous state
+      arrI.pop();
+      Processor.I=prevI;
+      arrSP.pop();
+      Processor.SP=prevSP;
+      arrPC.pop();
+      Processor.PC=prevPC;
+      arrReg.pop();
+      Processor.REGISTER_SET=prevReg;
+      arrStack.pop();
+      Processor.STACK=prevStack;
+      arrMem.pop();
+      Processor.MEMORY=prevMem;
+      arrVRAM.pop();
+      Processor.VRAM=prevVRAM;
+      arrScreen.pop();
+      Processor.SCREEN=prevScreen;
+      arrCanv.pop();
+      Processor.CANVAS=prevCanv;
+      //Updates opcode/function name being displayed
+      document.getElementById("opcode").innerHTML=ConvertToHexStr(Processor.MEMORY[Processor.PC] << 8 | Processor.MEMORY[Processor.PC+ 1]);
+      document.getElementById("function").innerHTML=ConvertToHexStr(Processor.Exec(Processor.MEMORY[Processor.PC] << 8 | Processor.MEMORY[Processor.PC+ 1]).name);
+      //For some reason, crashes on second "click" of prev button during one "pause", can only go back one step per pause
+      //Crashes when reversing certain opcodes for some reason,
+      //Suppose to iterate through the array which contains previous states of the Processor, to set processor back further then just 1 iteration
+      //For some reason, works when certain opcodes are running and crashes when certains one running
+      i++;
+      prevI=arrI[arrI.length-i];
+      prevSP=arrSP[arrSP.length-i];
+      prevPC=arrPC[arrPC.length-i];
+      prevReg=arrReg[arrReg.length-i];
+      prevStack=arrStack[arrStack.length-i];
+      prevMem=arrMem[arrMem.length-i];
+      prevVRAM=arrVRAM[arrVRAM.length-i];
+      prevScreen=arrScreen[arrScreen.length-i];
+      prevCanv=arrCanv[arrCanv.length-i];
     }
   }
+
+
+  function displayArr(){
+    var arrPrint;
+    for (i = 0; i < arr.length; i++){
+      arrPrint= arrPrint +", " + ConvertToHexStr(arr[i]);
+    }
+    document.getElementById("display").innerHTML = arrPrint;
+  }
+
+
   </script>
 </body>
-<div style="color: white" >OPCODE:</div>
-<div id="opcode" style="color: white">I will be updated (opcode)</div>
-<div style="color: white" >FUNCTION:</div>
-  <div id="function" style="color: white">I will be updated (function)</div>
-  <div style="color: white" >MEMORY:</div>
-  <div id="memory" style="color: white">I will be updated (memory)</div>
-  <div style="color: white" >STACK:</div>
-  <div id="stack" style="color: white">I will be updated (stack)</div>
+<div class = "row">
+  <div class = "column" style="background-color:#aaa;">
+    <div id="opcode" style="color: black"></div>
+  </div>
+  <div class="column" style="background-color:#bbb;">
+    <div id="function" style="color: black"></div>
+  </div>
+  <div class="column" style="background-color:#ccc;">
+    <div id="programcounter" style="color: black"></div>
+  </div>
+  <div class="column" style="background-color:#ddd;">
+    <div id="addresspointer" style="color: black"></div>
+  </div>
 </div>
+
+
+
 <button onclick="pauseEmu()">Pause</button>
 <button onclick="continueEmu()">Continue</button>
 <button onclick="next()">Next</button>
+<button onclick="prev()">Prev</button>
+<button onclick="displayArr()">Display Opcodes Executed So Far</button>
+<div class = 'row'>
+  <div class="column" style="background-color:#ddd;">
+    <div id="display" style="color: white"></div>
+</div>
 </html>
+
