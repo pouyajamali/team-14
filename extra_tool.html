@@ -49,18 +49,20 @@
 			var text_BLOB = new Blob([save_text], {type:"text/plain"});
 			var file_name = prompt("Enter File Name:", "Team14_text");
 			var link = document.createElement("a");
-			link.download = file_name;
-			link.innerHTML = "Download File";
+			if(file_name != null) {
+				link.download = file_name;
+				link.innerHTML = "Download File";
 
-			if(window.URL != null) {
-				link.href = window.URL.createObjectURL(text_BLOB);
-			} else {
-				
-				link.href = window.URL.createObjectURL(text_BLOB);
-				link.onclick = destroy;
-				link.style.display = "none";
-				document.body.appendChild(link);
-				
+				if(window.URL != null) {
+					link.href = window.URL.createObjectURL(text_BLOB);
+				} else {
+
+					link.href = window.URL.createObjectURL(text_BLOB);
+					link.onclick = destroy;
+					link.style.display = "none";
+					document.body.appendChild(link);
+
+				}
 			}
 			link.click();
 		}
