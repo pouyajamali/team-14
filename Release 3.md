@@ -64,9 +64,9 @@ The Team is divided into roles as follows:
 *  - [x] _February 12_  Automated testing ready to be implemented
 *  - [x] _February 15_  Chip8 Visualizer completed without pause, step forward etc.. capabilities
 *  - [x]  _February 25_ Chip8 Visualizer partially completed with pause and step forward features (UPDATED)
-*  - [ ] _February 28_ Start of creation of two games and Extra helpful tools to implement
-*  - [ ] _March 6_    Chip8 Visualizer completed with step back feature (NEW) 
-*  - [ ] _March 13_    One game and extra tool completed
+*  - [x] _February 28_ Start of creation of two games and Extra helpful tools to implement
+*  - [x] _March 13_    One game and extra tool completed
+*  - [ ] _March 19_    Chip8 Visualizer completed with step back feature (NEW)
 *  - [ ] _March 20_    Second game completed
 *  - [ ] _March 29_    Completion of Release 4 presentation
 *  - [ ] _April 8_     Last minute improvements or potential extra features completed
@@ -75,12 +75,9 @@ The Team is divided into roles as follows:
 ## Team Gantt Chart
 ![](gantt%20chart.png)
 	
-# **Testing**   
-(_UPDATED_)  
-* ~~For automated testing, our team will be looking into using Selenium, Appium or Jest and will decide once more research on these three tools have been completed.~~
-
-*   If...else statements will be created by a team member for automated testing. ~~We will still be looking into using either Selenium or Jest if time permits us to use one of those two testing tools.~~
-*   We have decided against using a testing software at this time due to time constraints. (NEW)
+# **Testing**     
+*   If...else statements will be created by a team member for automated testing.
+*   We have decided against using a testing software at this time due to time constraints.
 	
 # **Project Breakdown**
 ## Emulator
@@ -103,7 +100,7 @@ The Team is divided into roles as follows:
 	
 ## Chip8 Tool
 * One member will be simultaneously working on implementing a useful tool
-* We have decided to create an assembler as our tool to help create our Chip8 games (**NEW**)
+* We have decided to create a text editor as our tool to use to edit or programs (**NEW**)
    * _25_ hours of work-time needed per person
    
 
@@ -119,47 +116,61 @@ The Team is divided into roles as follows:
    * Test Lead Pouya had reviewed code as each section was added to the main files
       * Testing done with PONG game found online but this game had an issue mentioned in instructions. This game was also tested with other online emulators and confirmed that the issue was with the game itself as the same error was produced
 
-* Vizualizer (**NEW**)
+* Visualizer
    * Kei and Jake are the Lead Developers in this aspect
    * Kei has completed the pause and step forward features
-      * Pause stops program from continueing the program run cycle
+      * Pause stops program from continuing the program run cycle
       * Step Forward only works when program is paused, runs the run cycle once and then stops until pressed again
+      * Step Back button implemented but does not work currently (**NEW**)
    * Jake has completed the output of the registers and opcodes
       * Shows current opcode being executed
       * Shows current function being executed
       * Shows Memory at location I of the processor memory
       * Shoes Stack at location the stack pointer is pointing to
 
-* Webpage design (**NEW**)
+* Webpage design
    * Sidharth was the sole developer in this section
    * Using CSS, Sidharth had created a better looking page for our game
       * Used premade colours for background
-   * This section will be updated to accomandate for future needs
+   * This section will be updated to accommodate for future needs
       * Will be adding more text boxes for a cleaner design
    
-* Automated Testing For Emulator (**NEW**)
+* Automated Testing For Emulator
    * Vikash is the Lead Developer for this part
-   * Using if...else statments to create test
+   * Using if...else statements to create test
       * Looks to see if correct function is being called when certain opcode is passed
       * Also checks to see if program counter is also incremented correctly
    * Pouya was support for this section
+   
+ * Game 1 (**NEW**)
+    * Vikash created a game to dodge incoming projectiles
+       * simple game that continues until player loses
+       * Game resets once player has lost
+       * Improvements to be made to add difficulty
+       
+ * Text Editor (Extra Tool) (**NEW**)
+    * Pouya was lead developer for this
+       * Jake was support
+    * Simple text-editor to open files to edit in
+       * Currently opens all files except for ROM
+       * Working on trying to open ROM Files if possible
      
 # **Major Features for Next Release** (**UPDATED**)
-## ~~Chip8 Emulator~~
-* ~~An emulator will be completed~~
-* ~~Can operate Chip8 games others have created.~~
-## ~~_Automated Testing_~~
-* ~~_Automated testing using if...else statements_~~
-* ~~_Be able to implement changes and quickly test for functionality_~~
-## Chip8 Visualizer
+~~## Extra Tool~~
+~~* Extra tool completed to help create games~~
+~~* Creating an assembler to help make games~~
+~~## First Game~~
+~~* First game completed~~
+~~* First game idea is pong but is subject to change~~
+~~* May still have some bugs but playable~~
+## Chip8 Visualizer (**UPDATED**)
 * Visualizer will be completed
 * Be able to see Chip8 games being played in any web browser
     * Will be adding in step back feature
+    * Jake will be assisting Kei in completing the step back feature
 * _Visualizer fully completed including pause, step forward etc.._
-## Extra Tool (**NEW**)
-* Extra tool completed to help create games
-* Creating an assembler to help make games
-## First Game (**NEW**)
-* First game completed
-* First game idea is pong but is subject to change
-* May still have some bugs but playable
+## Second Game (**NEW**)
+* Game concept still being discussed
+## Text Editor Updates (**NEW**)
+* Being able to open ROM files to edit
+
