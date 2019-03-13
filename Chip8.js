@@ -23,6 +23,32 @@ function ConvertToHexStr(opcode)
   return retStr;
 }
 
+//All variables below stores "save states" of pause function for processor
+var prevFlag=false;
+var arr=new Array();
+var arrPC=new Array();
+var arrSP=new Array();
+var arrI=new Array();
+var arrReg=new Array();
+var arrStack=new Array();
+var arrMem=new Array();
+var arrVRAM=new Array();
+var arrScreen=new Array();
+var arrCanv=new Array();
+
+var previous;
+var prevI;
+var prevSP;
+var prevPC;
+var prevReg;
+var prevStack;
+var prevMem;
+var prevVRAM;
+var prevScreen;
+var prevCanv;
+
+var i=2;
+
 //Array storing bitmap font for emulator.
 var CHIP8_FONTSET =[
   0xF0, 0x90, 0x90, 0x90, 0xF0, // 0
@@ -228,12 +254,63 @@ RunCycle: function()
 {
   // Fetch opcode
   var opcode = Processor.MEMORY[Processor.PC] << 8 | Processor.MEMORY[Processor.PC+ 1]
- 
   var op = Processor.Exec(opcode);
+  
+  //prints opcode being executed
   document.getElementById("opcode").innerHTML=ConvertToHexStr(opcode);
-  document.getElementById("function").innerHTML=ConvertToHexStr(op.name);
-  document.getElementById("memory").innerHTML=ConvertToHexStr(Processor.MEMORY[Processor.I]);
-  document.getElementById("stack").innerHTML=ConvertToHexStr(Processor.STACK[Processor.SP]);
+
+  document.getElementById("function").innerHTML=op.name;
+
+  document.getElementById("programcounter").innerHTML=Processor.PC;
+
+  document.getElementById("addresspointer").innerHTML=Processor.I;
+
+  document.getElementById("v0").innerHTML=Processor.REGISTER_SET[0];
+  document.getElementById("v1").innerHTML=Processor.REGISTER_SET[1];
+  document.getElementById("v2").innerHTML=Processor.REGISTER_SET[2];
+  document.getElementById("v3").innerHTML=Processor.REGISTER_SET[3];
+  document.getElementById("v4").innerHTML=Processor.REGISTER_SET[4];
+  document.getElementById("v5").innerHTML=Processor.REGISTER_SET[5];
+  document.getElementById("v6").innerHTML=Processor.REGISTER_SET[6];
+  document.getElementById("v7").innerHTML=Processor.REGISTER_SET[7];
+  document.getElementById("v8").innerHTML=Processor.REGISTER_SET[8];
+  document.getElementById("v9").innerHTML=Processor.REGISTER_SET[9];
+  document.getElementById("vA").innerHTML=Processor.REGISTER_SET[10];
+  document.getElementById("vB").innerHTML=Processor.REGISTER_SET[11];
+  document.getElementById("vC").innerHTML=Processor.REGISTER_SET[12];
+  document.getElementById("vD").innerHTML=Processor.REGISTER_SET[13];
+  document.getElementById("vE").innerHTML=Processor.REGISTER_SET[14];
+  document.getElementById("vF").innerHTML=Processor.REGISTER_SET[15];
+
+  //pushes state of processor when each runcycle runs into an array
+  arr.push(opcode);
+  arrSP.push(Processor.SP);
+  arrI.push(Processor.I);
+  arrPC.push(Processor.PC);
+  arrReg.push(Processor.REGISTER_SET);
+  arrStack.push(Processor.STACK);
+  arrMem.push(Processor.MEMORY);
+  arrVRAM.push(Processor.VRAM);
+  arrScreen.push(Processor.SCREEN);
+  arrCanv.push(Processor.CANVAS);
+
+
+  //Displays previous opcode executed and sets a value to access the previous state of the processor
+  if(arr.length!=1){
+    previous=arr[arr.length-2];
+    prevI=arrI[arrI.length-2];
+    prevSP=arrSP[arrSP.length-2];
+    prevPC=arrPC[arrPC.length-2];
+    prevReg=arrReg[arrReg.length-2];
+    prevStack=arrStack[arrStack.length-2];
+    prevMem=arrMem[arrMem.length-2];
+    prevVRAM=arrVRAM[arrVRAM.length-2];
+    prevScreen=arrScreen[arrScreen.length-2];
+    prevCanv=arrCanv[arrCanv.length-2];
+    document.getElementById("test").innerHTML=ConvertToHexStr(previous);
+  }
+
+
   while(op !== undefined)
   {
     op = op(opcode);
