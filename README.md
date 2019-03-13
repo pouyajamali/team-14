@@ -3,19 +3,19 @@ CMPT 276 chip8 emulator
 
 Finish Dates
   Jan 28
-      Wokring emulator
+      Working emulator
   
   Jan 18
       Release 0 presentation
        
   Feb 6
-      Visulizer with ongoing back and forth testing.  
-      Replaning and minor changes if needed. 
+      Visualizer with ongoing back and forth testing.  
+      Replanning and minor changes if needed. 
       
   Feb 27
       Automated testing.
       Extra helpful tools
-      Improvments to Emulator and Visulizer
+      Improvments to Emulator and Visualizer
       
   Mar 13
       Two games
@@ -24,7 +24,7 @@ Finish Dates
       Release 4 presentation
       
   Apr 8
-      Improvments 
-        - adding potentional features ie sounds, better interface
+      Improvements 
+        - adding potential features ie sounds, better interface
       Debugging
    
