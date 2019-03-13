@@ -23,7 +23,8 @@ function ConvertToHexStr(opcode)
   return retStr;
 }
 
-var pause=false;
+
+//All variables below stores "save states" of pause function for processor
 var prevFlag=false;
 var arr=new Array();
 var arrPC=new Array();
@@ -46,6 +47,8 @@ var prevMem;
 var prevVRAM;
 var prevScreen;
 var prevCanv;
+
+var i=2;
 
 
 //Array storing bitmap font for emulator.
@@ -255,10 +258,9 @@ RunCycle: function()
   // Fetch opcode
   var opcode = Processor.MEMORY[Processor.PC] << 8 | Processor.MEMORY[Processor.PC+ 1]
   var op = Processor.Exec(opcode);
-  //test code
 
 
-  //Pushes opcodes being executed into an array
+  //pushes state of processor when each runcycle runs into an array
   arr.push(opcode);
   arrSP.push(Processor.SP);
   arrI.push(Processor.I);
@@ -271,7 +273,7 @@ RunCycle: function()
   arrCanv.push(Processor.CANVAS);
 
 
-  //Displays previous opcode executed
+  //Displays previous opcode executed and sets a value to access the previous state of the processor
   if(arr.length!=1){
     previous=arr[arr.length-2];
     prevI=arrI[arrI.length-2];
@@ -286,6 +288,7 @@ RunCycle: function()
     document.getElementById("test").innerHTML=ConvertToHexStr(previous);
   }
 
+  //
   document.getElementById("opcode").innerHTML=ConvertToHexStr(opcode);
   document.getElementById("function").innerHTML=ConvertToHexStr(op.name);
   document.getElementById("memory").innerHTML=ConvertToHexStr(Processor.MEMORY[Processor.I]);
