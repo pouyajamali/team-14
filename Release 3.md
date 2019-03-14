@@ -152,8 +152,9 @@ The Team is divided into roles as follows:
     * Pouya was lead developer for this
        * Jake was support
     * Simple text-editor to open files to edit in
-       * Currently opens all files except for ROM
+       * Opens files such as .html, .txt and .js
        * Working on trying to open ROM Files if possible
+       * can save file to specified filetype
      
 # **Major Features for Next Release** (**UPDATED**)
 ~~## Extra Tool~~
