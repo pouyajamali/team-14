@@ -1,36 +1,68 @@
 <!DOCTYPE html>
 
-
 <html>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 	<title>Team 14 Tool</title>
 	<style type="text/css">	
-			#my_text{
-		width: 500px;
-		height: 400px;
+		#my_text{
+			width: 700px;
+			height: 1000px;
+			background-color: #4E4745;
+			font: 15px "Times New Roman", Times, serif;
 		}
 
 		#editor{
 			text-align: center;
 		}
-
 		body {
 			background: #870000;
 	    	background: -webkit-linear-gradient(to right, #190A05, #870000);
 	    	background: linear-gradient(to right, #190A05, #870000);
 		}
+
+		#radio{
+			background-color: lightgrey;
+ 			width: 300px;
+ 			padding: 5px;
+ 			margin: 10px;
+		}
+
+		#logo{
+			font: 40px "Times New Roman", Times, serif;
+		}
+
+		#detail{
+			font: 15px "Times New Roman", Times, serif;
+		}
 	</style>
 </head>
 
 <body>
+	<p>
+		<div id="logo" style="color:white">
+			TEAM 14 TOOL(Text Editor)<br>
+		</div>
+		<div id="detail" style="color:white">
+			The following editor will allow you to open text files like plain text, js, html, edit them and store them.
+		</div>
+	</p>
+
+	<p>	
+	<div id="radio">	
+		Please choose your output type.<br>
+		<input type="radio" name="ot" id="js" value="javascript"> JavaScript<br>
+		<input type="radio" name="ot" id="html" value="html"> HTML<br>
+		<input type="radio" name="ot" id="txt" value="plain"> Text
+	</div>
+	</p>
+
 	<div id="editor">
 		<div id="control">
 			<input type="file" id="file_loader">
 			<input type="button" id="save" value="Save File" onclick="save_file();">
-		</div> 
-		<br />
-		<textarea id="my_text"></textarea>	 
+		</div> <br />
+		<textarea id="my_text" style="color:white;"></textarea>	 
 	</div>
 	<script type="text/javascript">
 		// Functions to read text files
@@ -43,37 +75,54 @@
 			}
 			file_reader.readAsText(file, "UTF-8");
 		};
+
+		var output_type;
+		document.getElementById("js").onchange = function(){
+			var bool = document.getElementById("js").checked;
+			if(bool == true){
+				output_type = document.getElementById("js").value;
+			}
+		}
+
+		document.getElementById("html").onchange = function(){
+			var bool = document.getElementById("html").checked;
+			if(bool == true){
+				output_type = document.getElementById("html").value;
+			};
+		}
+		
+		document.getElementById("txt").onchange = function(){
+			var bool = document.getElementById("txt").checked;
+			if(bool == true){
+				output_type = "plain";
+			}
+		}
+
 		// Functions to save files
 		function save_file(){
 			var save_text = document.getElementById("my_text").value;
-			var text_BLOB = new Blob([save_text], {type:"text/plain"});
+			var text_BLOB = new Blob([save_text], {type:"text/"+output_type});
 			var file_name = prompt("Enter File Name:", "Team14_text");
 			var link = document.createElement("a");
-			if(file_name != null) {
+			if(file_name != null){
 				link.download = file_name;
 				link.innerHTML = "Download File";
 
 				if(window.URL != null) {
 					link.href = window.URL.createObjectURL(text_BLOB);
 				} else {
-
+					
 					link.href = window.URL.createObjectURL(text_BLOB);
 					link.onclick = destroy;
 					link.style.display = "none";
-					document.body.appendChild(link);
-
+					document.body.appendChild(link);	
 				}
+				link.click();
 			}
-			link.click();
 		}
-
-
 		function destroy(e){
 			document.body.removeChild(e.target);
 		}
-
-	</script>
-	
+	</script>	
 </body>
-
 </html>
