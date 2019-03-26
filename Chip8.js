@@ -147,10 +147,10 @@ OnKey: function(evt)
 
   idx =
   {
-    '1': 0x1,'2': 0x2,'3': 0x3,'4': 0x4,
-    'Q': 0x4,'W':0x5,'E': 0x6,'R': 0xD,
-    'A': 0x7,'S':0x8,'D': 0x9,'F': 0xE,
-    'Z': 0xA,'X':0x0,'C': 0xB, 'V':0xF,
+    '1': 0x1,'2': 0x2,'3': 0x3,'4': 0xC,
+    'Q': 0x4,'W': 0x5,'E': 0x6,'R': 0xD,
+    'A': 0x7,'S': 0x8,'D': 0x9,'F': 0xE,
+    'Z': 0xA,'X': 0x0,'C': 0xB,'V': 0xF,
   }[charStr];
 
   if(idx !== undefined)
@@ -322,7 +322,7 @@ DebugRender: function()
 {
   if(Processor.DRAW_FLAG == false)
     return;
-  Processor.CANVAS.fillStyle = "rgba(220, 220,220, 0.5)";
+  Processor.CANVAS.fillStyle = "rgba(220, 220,220, 1)";
 	Processor.CANVAS.fillRect(0, 0, 64*15, 32*15);
 	Processor.CANVAS.fillStyle = "#FF9100";
 
