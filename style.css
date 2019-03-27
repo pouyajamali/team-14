@@ -50,13 +50,12 @@ header a:hover{
 
 /* Canvas/Memory Display */
 #screen{
-  width: 960px;
-  height: 470px;
   background-color: #bbb;
   margin-top: 50px;
   margin-left: 5em;
   float: left;
   box-sizing: border-box;
+  border: black 3px solid;
 }
 
 #sidebar{
