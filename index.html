@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Chip 8 Emulator</title>
+    <link rel="stylesheet" href="style.css" type="text/css">
+    <script src="opcode.js"></script>
+    <script src="Visualizer_Print.js"></script>
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <div id="logo">
+          <h2>Chip 8 Emulator<h2>
+        </div>
+        <nav>
+          <ul>
+            <li><a href="index.html"> Emulator </a></li>
+            <li><a href="extra_tool.html"> Extra Tool </a></li>
+            <li><a href=""> About </a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <div class="container">
+      <canvas id="screen"></canvas>
+      <div id="sidebar">
+        <h2>Registers</h2>
+        <ul>
+          <li>v0:<span id="v0"></span></li>
+          <li>v1:<span id="v1"></span></li>
+          <li>v2:<span id="v2"></span></li>
+          <li>v3:<span id="v3"></span></li>
+          <li>v4:<span id="v4"></span></li>
+          <li>v5:<span id="v5"></span></li>
+          <li>v6:<span id="v6"></span></li>
+          <li>v7:<span id="v7"></span></li>
+          <li>v8:<span id="v8"></span></li>
+          <li>v9:<span id="v9"></span></li>
+          <li>vA:<span id="vA"></span></li>
+          <li>vB:<span id="vB"></span></li>
+          <li>vC:<span id="vC"></span></li>
+          <li>vD:<span id="vD"></span></li>
+          <li>vE:<span id="vE"></span></li>
+          <li>vF:<span id="vF"></span></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="button-bar">
+        <button onclick="prev()">Prev</button>
+        <button onclick="pauseEmu()">Pause</button>
+        <button onclick="continueEmu()">Continue</button>
+        <button onclick="next()">Next</button>
+      </div>
+      <div class="game-select">
+        <button onclick="document.getElementById('fileInput').click()">Game Select</button>
+        <input type='file' id="fileInput">
+      </div>
+
+      <div class="functionprint">
+        <div class="column">
+          <h2>Opcodes</h2>
+          <div id="opcode"></div>
+        </div>
+        <div class="column">
+          <h2>Functions</h2>
+          <div id="function"></div>
+        </div>
+        <div class="column">
+          <h2>Program Counter</h2>
+          <div id="programcounter"></div>
+        </div>
+        <div class="column">
+          <h2>Address Pointer</h2>
+          <div id="addresspointer"></div>
+        </div>
+      </div>
+    </div>
+
+  </body>
+</html>
