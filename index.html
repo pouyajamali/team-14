@@ -79,5 +79,106 @@
       </div>
     </div>
 
+    <script>
+    var pause=false;
+
+    window.onload = function() {
+        var fileInput = document.getElementById('fileInput');
+
+        fileInput.addEventListener('change', function(e) {
+          var file = fileInput.files[0];
+          Processor.Reset();
+          Processor.LoadProgram(file);
+        });
+    }
+
+    setInterval(function(){
+
+      if(Processor.PROGRAM_LOADED == true)
+      {
+        if(pause==false){
+          Processor.RunCycle();
+          Processor.RunCycle();
+          Processor.RunCycle();
+          Processor.RunCycle();
+          Processor.RunCycle();
+          Processor.RunCycle();
+          Processor.RunCycle();
+          Processor.RunCycle();
+        }
+      }
+    }, 8);
+
+    setInterval(function(){
+      if(Processor.PROGRAM_LOADED == true)
+        Processor.DebugRender();
+    }, 128);
+
+    function pauseEmu() {
+      pause=true;
+    }
+    function continueEmu() {
+      pause=false;
+    }
+    function next(){
+        if(pause==true){
+          Processor.RunCycle();
+        }
+      }
+
+      function prev(){
+      if(pause==true){
+        //Saves previous "version" of the processor, and sets processor to previous version when prev clicked.
+        //Currently only first "prev" click works after a pause, suppose to continue working like "next" button
+        //Screen also does not update when going back
+        //Does correctly go back in opcode however(Which is the main function)
+        //Removes most recent "version" of processor, and sets processor to its previous state
+        arrI.pop();
+        Processor.I=prevI;
+        arrSP.pop();
+        Processor.SP=prevSP;
+        arrPC.pop();
+        Processor.PC=prevPC;
+        arrReg.pop();
+        Processor.REGISTER_SET=prevReg;
+        arrStack.pop();
+        Processor.STACK=prevStack;
+        arrMem.pop();
+        Processor.MEMORY=prevMem;
+        arrVRAM.pop();
+        Processor.VRAM=prevVRAM;
+        arrScreen.pop();
+        Processor.SCREEN=prevScreen;
+        arrCanv.pop();
+        Processor.CANVAS=prevCanv;
+        //Updates opcode/function name being displayed
+        document.getElementById("opcode").innerHTML=ConvertToHexStr(Processor.MEMORY[Processor.PC] << 8 | Processor.MEMORY[Processor.PC+ 1]);
+        document.getElementById("function").innerHTML=ConvertToHexStr(Processor.Exec(Processor.MEMORY[Processor.PC] << 8 | Processor.MEMORY[Processor.PC+ 1]).name);
+        //For some reason, crashes on second "click" of prev button during one "pause", can only go back one step per pause
+        //Crashes when reversing certain opcodes for some reason,
+        //Suppose to iterate through the array which contains previous states of the Processor, to set processor back further then just 1 iteration
+        //For some reason, works when certain opcodes are running and crashes when certains one running
+        i++;
+        prevI=arrI[arrI.length-i];
+        prevSP=arrSP[arrSP.length-i];
+        prevPC=arrPC[arrPC.length-i];
+        prevReg=arrReg[arrReg.length-i];
+        prevStack=arrStack[arrStack.length-i];
+        prevMem=arrMem[arrMem.length-i];
+        prevVRAM=arrVRAM[arrVRAM.length-i];
+        prevScreen=arrScreen[arrScreen.length-i];
+        prevCanv=arrCanv[arrCanv.length-i];
+      }
+    }
+
+    function displayArr(){
+      var arrPrint;
+      for (i = 0; i < arr.length; i++){
+        arrPrint= arrPrint +", " + ConvertToHexStr(arr[i]);
+      }
+      document.getElementById("display").innerHTML = arrPrint;
+    }
+    </script>
+
   </body>
 </html>
