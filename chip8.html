@@ -1,239 +1,170 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title></title>
-  <script src="opcode.js"></script>
-  <script src="Visualizer_Print.js"></script>
-  <style type="text/css">
-    body{
-      background: #870000;
-    background: -webkit-linear-gradient(to right, #190A05, #870000);
-    background: linear-gradient(to right, #190A05, #870000);
+  <head>
+    <title>Chip 8 Emulator</title>
+    <link rel="stylesheet" href="style.css" type="text/css">
+    <script src="opcode.js"></script>
+    <script src="Chip8.js"></script>
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <div id="logo">
+          <h2>Chip 8 Emulator<h2>
+        </div>
+        <nav>
+          <ul>
+            <li><a href="index.html"> Emulator </a></li>
+            <li><a href="extra_tool.html"> Extra Tool </a></li>
+            <li><a href=""> About </a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <div class="container">
+      <canvas id="screen" width="960" height="470"></canvas>
+      <div id="sidebar">
+        <h2>Registers</h2>
+        <ul>
+          <li>v0:<span id="v0"></span></li>
+          <li>v1:<span id="v1"></span></li>
+          <li>v2:<span id="v2"></span></li>
+          <li>v3:<span id="v3"></span></li>
+          <li>v4:<span id="v4"></span></li>
+          <li>v5:<span id="v5"></span></li>
+          <li>v6:<span id="v6"></span></li>
+          <li>v7:<span id="v7"></span></li>
+          <li>v8:<span id="v8"></span></li>
+          <li>v9:<span id="v9"></span></li>
+          <li>vA:<span id="vA"></span></li>
+          <li>vB:<span id="vB"></span></li>
+          <li>vC:<span id="vC"></span></li>
+          <li>vD:<span id="vD"></span></li>
+          <li>vE:<span id="vE"></span></li>
+          <li>vF:<span id="vF"></span></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="button-bar">
+        <button onclick="prev()">Prev</button>
+        <button onclick="pauseEmu()">Pause</button>
+        <button onclick="continueEmu()">Continue</button>
+        <button onclick="next()">Next</button>
+      </div>
+      <div class="game-select">
+        <button onclick="document.getElementById('fileInput').click()">Game Select</button>
+        <input type='file' id="fileInput">
+      </div>
+
+      <div class="functionprint">
+        <div class="column">
+          <h2>Opcodes</h2>
+          <div id="opcode"></div>
+        </div>
+        <div class="column">
+          <h2>Functions</h2>
+          <div id="function"></div>
+        </div>
+        <div class="column">
+          <h2>Program Counter</h2>
+          <div id="programcounter"></div>
+        </div>
+        <div class="column">
+          <h2>Address Pointer</h2>
+          <div id="addresspointer"></div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+    var pause=false;
+
+    window.onload = function() {
+        var fileInput = document.getElementById('fileInput');
+
+        fileInput.addEventListener('change', function(e) {
+          var file = fileInput.files[0];
+          Processor.Reset();
+          Processor.LoadProgram(file);
+        });
     }
-    canvas{
-      background-color: black;
-    }
-    h4{
-      color: white;
-    }
-    input{
-      color: white;
-    }
-    h4{
-      color: white;
-    }
-  </style>
-</head>
-<style>
-* {
-  box-sizing: border-box;
-}
 
-.column {
-  float: left;
-  width: 200px;
-  padding: 10px;
-  height: 40px;
-}
+    setInterval(function(){
 
-.longercolumn {
-  float: left;
-  width: 50px;
-  padding: 10px;
-  height: 350px;
-}
-
-.row:after {
-  content: "";
-  display: table;
-  clear: both;
-}
-
-</style>
-
-<body>
-
-<div class = "row">
-  <canvas id="screen" width="960" height="470"></canvas>
-  <div class="longercolumn" style="background-color:#190A05;">
-    <b style="color: white">
-    V_0:<br>
-    V_1:<br>
-    V_2:<br>
-    V_3:<br>
-    V_4:<br>
-    V_5:<br>
-    V_6:<br>
-    V_7:<br>
-    V_8:<br>
-    V_9:<br>
-    V_A:<br>
-    V_B:<br>
-    V_C:<br>
-    V_D:<br>
-    V_E:<br>
-    V_F:<br>
-  </div>
-  <div class="longercolumn" style="background-color:#190A05;">
-    <div id="v0" style="color: white"></div>
-    <div id="v1" style="color: white"></div>
-    <div id="v2" style="color: white"></div>
-    <div id="v3" style="color: white"></div>
-    <div id="v4" style="color: white"></div>
-    <div id="v5" style="color: white"></div>
-    <div id="v6" style="color: white"></div>
-    <div id="v7" style="color: white"></div>
-    <div id="v8" style="color: white"></div>
-    <div id="v9" style="color: white"></div>
-    <div id="vA" style="color: white"></div>
-    <div id="vB" style="color: white"></div>
-    <div id="vC" style="color: white"></div>
-    <div id="vD" style="color: white"></div>
-    <div id="vE" style="color: white"></div>
-    <div id="vF" style="color: white"></div>
-  </div>
-</div>
-  <div>
-      Select a game file:
-      <input type="file" id="fileInput">
-  </div>
-  <b style="color: white">
-  Opcodes&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
-    Functions&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
-    Program Counter&emsp;&emsp;&emsp;&emsp;&emsp;
-    Address pointer&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
-  </b>
-  <script>
-
-  var pause=false;
-
-
-  window.onload = function() {
-      var fileInput = document.getElementById('fileInput');
-
-      fileInput.addEventListener('change', function(e) {
-        var file = fileInput.files[0];
-        Processor.Reset();
-        Processor.LoadProgram(file);
-      });
-  }
-
-  setInterval(function(){
-
-    if(Processor.PROGRAM_LOADED == true)
-    {
-      if(pause==false){
-        Processor.RunCycle();
-        Processor.RunCycle();
-        Processor.RunCycle();
-        Processor.RunCycle();
-        Processor.RunCycle();
-        Processor.RunCycle();
-        Processor.RunCycle();
-        Processor.RunCycle();
+      if(Processor.PROGRAM_LOADED == true)
+      {
+        if(pause==false){
+          Processor.RunCycle();
+          Processor.RunCycle();
+          Processor.RunCycle();
+          Processor.RunCycle();
+          Processor.RunCycle();
+          Processor.RunCycle();
+          Processor.RunCycle();
+          Processor.RunCycle();
+        }
       }
+    }, 16);
+
+    setInterval(function(){
+      if(Processor.PROGRAM_LOADED == true)
+        Processor.DebugRender();
+    }, 16);
+
+    function pauseEmu() {
+      pause=true;
     }
-  }, 8);
+    function continueEmu() {
+      pause=false;
+    }
+    function next(){
+        if(pause==true){
+          Processor.RunCycle();
+        }
+      }
 
-  setInterval(function(){
-    if(Processor.PROGRAM_LOADED == true)
-      Processor.DebugRender();
-  }, 128);
-
-  function pauseEmu() {
-    pause=true;
-  }
-  function continueEmu() {
-    pause=false;
-  }
-  function next(){
+      function prev(){
       if(pause==true){
-        Processor.RunCycle();
+        
+        Processor.I=arrI.pop();
+        
+        Processor.SP=arrSP.pop();
+        
+        Processor.PC=arrPC.pop();
+        
+        Processor.REGISTER_SET=arrReg.pop();
+        
+        Processor.STACK=arrStack.pop();
+        
+        Processor.MEMORY=arrMem.pop();
+        
+        Processor.VRAM=arrVRAM.pop();
+        
+
+        Processor.DRAW_FLAG=arrDraw.pop();
+
+
+        document.getElementById("opcode").innerHTML=ConvertToHexStr(arr.pop());
+
+        document.getElementById("function").innerHTML=arrFunc.pop().name;
+
+        document.getElementById("programcounter").innerHTML=Processor.PC;
+
+        document.getElementById("addresspointer").innerHTML=Processor.I;
+
+
+        if(Processor.DRAW_FLAG === true){
+          Processor.DebugRender();
+        }
+
+
       }
     }
 
-    function prev(){
-    if(pause==true){
-      //Saves previous "version" of the processor, and sets processor to previous version when prev clicked.
-      //Currently only first "prev" click works after a pause, suppose to continue working like "next" button
-      //Screen also does not update when going back
-      //Does correctly go back in opcode however(Which is the main function)
-      //Removes most recent "version" of processor, and sets processor to its previous state
-      arrI.pop();
-      Processor.I=prevI;
-      arrSP.pop();
-      Processor.SP=prevSP;
-      arrPC.pop();
-      Processor.PC=prevPC;
-      arrReg.pop();
-      Processor.REGISTER_SET=prevReg;
-      arrStack.pop();
-      Processor.STACK=prevStack;
-      arrMem.pop();
-      Processor.MEMORY=prevMem;
-      arrVRAM.pop();
-      Processor.VRAM=prevVRAM;
-      arrScreen.pop();
-      Processor.SCREEN=prevScreen;
-      arrCanv.pop();
-      Processor.CANVAS=prevCanv;
-      //Updates opcode/function name being displayed
-      document.getElementById("opcode").innerHTML=ConvertToHexStr(Processor.MEMORY[Processor.PC] << 8 | Processor.MEMORY[Processor.PC+ 1]);
-      document.getElementById("function").innerHTML=ConvertToHexStr(Processor.Exec(Processor.MEMORY[Processor.PC] << 8 | Processor.MEMORY[Processor.PC+ 1]).name);
-      //For some reason, crashes on second "click" of prev button during one "pause", can only go back one step per pause
-      //Crashes when reversing certain opcodes for some reason,
-      //Suppose to iterate through the array which contains previous states of the Processor, to set processor back further then just 1 iteration
-      //For some reason, works when certain opcodes are running and crashes when certains one running
-      i++;
-      prevI=arrI[arrI.length-i];
-      prevSP=arrSP[arrSP.length-i];
-      prevPC=arrPC[arrPC.length-i];
-      prevReg=arrReg[arrReg.length-i];
-      prevStack=arrStack[arrStack.length-i];
-      prevMem=arrMem[arrMem.length-i];
-      prevVRAM=arrVRAM[arrVRAM.length-i];
-      prevScreen=arrScreen[arrScreen.length-i];
-      prevCanv=arrCanv[arrCanv.length-i];
-    }
-  }
+    </script>
 
-
-  function displayArr(){
-    var arrPrint;
-    for (i = 0; i < arr.length; i++){
-      arrPrint= arrPrint +", " + ConvertToHexStr(arr[i]);
-    }
-    document.getElementById("display").innerHTML = arrPrint;
-  }
-
-
-  </script>
-</body>
-<div class = "row">
-  <div class = "column" style="background-color:#aaa;">
-    <div id="opcode" style="color: black"></div>
-  </div>
-  <div class="column" style="background-color:#bbb;">
-    <div id="function" style="color: black"></div>
-  </div>
-  <div class="column" style="background-color:#ccc;">
-    <div id="programcounter" style="color: black"></div>
-  </div>
-  <div class="column" style="background-color:#ddd;">
-    <div id="addresspointer" style="color: black"></div>
-  </div>
-</div>
-
-
-
-<button onclick="pauseEmu()">Pause</button>
-<button onclick="continueEmu()">Continue</button>
-<button onclick="next()">Next</button>
-<button onclick="prev()">Prev</button>
-<button onclick="displayArr()">Display Opcodes Executed So Far</button>
-<div class = 'row'>
-  <div class="column" style="background-color:#ddd;">
-    <div id="display" style="color: white"></div>
-</div>
+  </body>
 </html>
-
