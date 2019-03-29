@@ -15,6 +15,12 @@ body{
   overflow: hidden;
 }
 
+.wrapper{
+  text-align: center;
+  margin: auto;
+  width: 30%;
+}
+
 /* Header */
 header{
   background: #ffffff;
@@ -216,4 +222,10 @@ button:active{
 
 .sidebar_tool #file_loader{
   display: none;
+}
+
+/* About Page */
+#team_info ul{
+  list-style: none;
+  font-size: 20px;
 }
