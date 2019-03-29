@@ -1,128 +1,109 @@
-<!DOCTYPE html>
-
 <html>
-<head>
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-	<title>Team 14 Tool</title>
-	<style type="text/css">	
-		#my_text{
-			width: 700px;
-			height: 1000px;
-			background-color: #4E4745;
-			font: 15px "Times New Roman", Times, serif;
-		}
+	<head>
+		<title>Text Editor Tool</title>
+		<link rel="stylesheet" href="style.css" type="text/css">
+	</head>
 
-		#editor{
-			text-align: center;
-		}
-		body {
-			background: #870000;
-	    	background: -webkit-linear-gradient(to right, #190A05, #870000);
-	    	background: linear-gradient(to right, #190A05, #870000);
-		}
+	<body>
+		<header>
+			<div class="container">
+				<div id="logo">
+					<h2>Text Editor Tool<h2>
+				</div>
+				<nav>
+					<ul>
+						<li><a href="index.html"> Emulator </a></li>
+						<li><a href="extra_tool.html"> Extra Tool </a></li>
+						<li><a href=""> About </a></li>
+					</ul>
+				</nav>
+			</div>
+		</header>
 
-		#radio{
-			background-color: lightgrey;
- 			width: 300px;
- 			padding: 5px;
- 			margin: 10px;
-		}
+		<div class="container">
+			<div id="editor">
+				<textarea id="my_text" style="color:white;"></textarea>
+			</div>
 
-		#logo{
-			font: 40px "Times New Roman", Times, serif;
-		}
+			<div class="sidebar_tool">
+				<div id="about">
+					<p>The following editor will allow you to open text files like plain text, js, html, edit them and store them.</p>
+				</div>
+				<div id="radio">
+					Please choose your output type.<br>
+					<input type="radio" name="ot" id="js" value="javascript"> JavaScript<br>
+					<input type="radio" name="ot" id="html" value="html"> HTML<br>
+					<input type="radio" name="ot" id="txt" value="plain"> Text
+				</div>
 
-		#detail{
-			font: 15px "Times New Roman", Times, serif;
-		}
-	</style>
-</head>
-
-<body>
-	<p>
-		<div id="logo" style="color:white">
-			TEAM 14 TOOL(Text Editor)<br>
+				<div id="control">
+					<button onclick="document.getElementById('file_loader').click()">Open File</button>
+					<input type="file" id="file_loader">
+					<button id="save" value="Save File" onclick="save_file();">Save File</button>
+				</div>
+			</div>
 		</div>
-		<div id="detail" style="color:white">
-			The following editor will allow you to open text files like plain text, js, html, edit them and store them.
-		</div>
-	</p>
 
-	<p>	
-	<div id="radio">	
-		Please choose your output type.<br>
-		<input type="radio" name="ot" id="js" value="javascript"> JavaScript<br>
-		<input type="radio" name="ot" id="html" value="html"> HTML<br>
-		<input type="radio" name="ot" id="txt" value="plain"> Text
-	</div>
-	</p>
-
-	<div id="editor">
-		<div id="control">
-			<input type="file" id="file_loader">
-			<input type="button" id="save" value="Save File" onclick="save_file();">
-		</div> <br />
-		<textarea id="my_text" style="color:white;"></textarea>	 
-	</div>
-	<script type="text/javascript">
-		// Functions to read text files
-		document.getElementById("file_loader").onchange = function(){
-			var file = document.getElementById("file_loader").files[0];
-			var file_reader = new FileReader();
-			file_reader.onload = function(e){
-				var text = e.target.result;
-				document.getElementById("my_text").value = text;
-			}
-			file_reader.readAsText(file, "UTF-8");
-		};
-
-		var output_type;
-		document.getElementById("js").onchange = function(){
-			var bool = document.getElementById("js").checked;
-			if(bool == true){
-				output_type = document.getElementById("js").value;
-			}
-		}
-
-		document.getElementById("html").onchange = function(){
-			var bool = document.getElementById("html").checked;
-			if(bool == true){
-				output_type = document.getElementById("html").value;
-			};
-		}
-		
-		document.getElementById("txt").onchange = function(){
-			var bool = document.getElementById("txt").checked;
-			if(bool == true){
-				output_type = "plain";
-			}
-		}
-
-		// Functions to save files
-		function save_file(){
-			var save_text = document.getElementById("my_text").value;
-			var text_BLOB = new Blob([save_text], {type:"text/"+output_type});
-			var file_name = prompt("Enter File Name:", "Team14_text");
-			var link = document.createElement("a");
-			if(file_name != null){
-				link.download = file_name;
-				link.innerHTML = "Download File";
-
-				if(window.URL != null) {
-					link.href = window.URL.createObjectURL(text_BLOB);
-				} else {
-					
-					link.href = window.URL.createObjectURL(text_BLOB);
-					link.onclick = destroy;
-					link.style.display = "none";
-					document.body.appendChild(link);	
+		<script type="text/javascript">
+			// Functions to read text files
+			document.getElementById("file_loader").onchange = function(){
+				var file = document.getElementById("file_loader").files[0];
+				var file_reader = new FileReader();
+				file_reader.onload = function(e){
+					var text = e.target.result;
+					document.getElementById("my_text").value = text;
 				}
-				link.click();
+				file_reader.readAsText(file, "UTF-8");
+			};
+
+			var output_type;
+			document.getElementById("js").onchange = function(){
+				var bool = document.getElementById("js").checked;
+				if(bool == true){
+					output_type = document.getElementById("js").value;
+				}
 			}
-		}
-		function destroy(e){
-			document.body.removeChild(e.target);
-		}
-	</script>	
-</body>
+
+			document.getElementById("html").onchange = function(){
+				var bool = document.getElementById("html").checked;
+				if(bool == true){
+					output_type = document.getElementById("html").value;
+				};
+			}
+
+			document.getElementById("txt").onchange = function(){
+				var bool = document.getElementById("txt").checked;
+				if(bool == true){
+					output_type = "plain";
+				}
+			}
+
+			// Functions to save files
+			function save_file(){
+				var save_text = document.getElementById("my_text").value;
+				var text_BLOB = new Blob([save_text], {type:"text/"+output_type});
+				var file_name = prompt("Enter File Name:", "Team14_text");
+				var link = document.createElement("a");
+				if(file_name != null){
+					link.download = file_name;
+					link.innerHTML = "Download File";
+
+					if(window.URL != null) {
+						link.href = window.URL.createObjectURL(text_BLOB);
+					} else {
+
+						link.href = window.URL.createObjectURL(text_BLOB);
+						link.onclick = destroy;
+						link.style.display = "none";
+						document.body.appendChild(link);
+					}
+					link.click();
+				}
+			}
+			function destroy(e){
+				document.body.removeChild(e.target);
+			}
+		</script>
+	</body>
 </html>
+
