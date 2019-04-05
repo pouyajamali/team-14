@@ -9,6 +9,7 @@
 [Project Breakdown](#project-breakdown)    
 [What Has Been Completed](#what-has-been-completed-updated)   
 [Major Features for Next Release](#major-features-for-next-release-updated)
+[Post Mortem](#emulator-post-mortem-new)
   
 # **Introduction**
 * In this project, our team will create a Chip8 Emulator that is able to run two self created games (and any other Chip8 games) on any javascript enabled web-browser
@@ -178,3 +179,7 @@ The Team is divided into roles as follows:
 ~~* Being able to open ROM files to edit~~
 ## All Features of This Emulator has Been Completed
 * No New Updates Will be Added to this Project
+
+# **Emulator Post Mortem** (**NEW**)
+* During this team project, we have found how hard it can really be to work in a team and to be able to manage a schedule escpecially agmonst students. This project included various aspects of a real-life team project that we may not have been able to experience in other courses. 
+   * Trying to split work on a small scale project like this was difficult. Even when we did find a way to divide the work, there were people who were waiting on other parts of the project to continue. Also, if team members were not somewhat involved in different aspects, it proved to be difficult to ask for help from those team members.
