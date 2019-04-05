@@ -166,20 +166,21 @@ The Team is divided into roles as follows:
        * Game speeds up as player progresses in levels
           * Games speeds up at levels 5, 9, 13
      
-# **Major Features for Next Release** (**UPDATED**)
-~~## Chip8 Visualizer~~
-~~* Visualizer will be completed~~
-~~* Be able to see Chip8 games being played in any web browser~~
-    ~~* Will be adding in step back feature~~
-    ~~* Jake will be assisting Kei in completing the step back feature~~
-~~* _Visualizer fully completed including pause, step forward etc.._~~
-~~## Second Game~~
-~~* Game concept still being discussed~~
-~~## Text Editor Updates~~
-~~* Being able to open ROM files to edit~~
+# **Major Features for Next Release** (**UPDATED**)   
+## ~~Chip8 Visualizer~~    
+* ~~Visualizer will be completed~~    
+* ~~Be able to see Chip8 games being played in any web browser~~    
+    * ~~Will be adding in step back feature~~   
+    * ~~Jake will be assisting Kei in completing the step back feature~~   
+* ~~_Visualizer fully completed including pause, step forward etc.._~~   
+## ~~Second Game~~   
+* ~~Game concept still being discussed~~   
+## ~~Text Editor Updates~~   
+* ~~Being able to open ROM files to edit~~   
 ## All Features of This Emulator has Been Completed
 * No New Updates Will be Added to this Project
 
 # **Emulator Post Mortem** (**NEW**)
 * During this team project, we have found how hard it can really be to work in a team and to be able to manage a schedule escpecially agmonst students. This project included various aspects of a real-life team project that we may not have been able to experience in other courses. 
-   * Trying to split work on a small scale project like this was difficult. Even when we did find a way to divide the work, there were people who were waiting on other parts of the project to continue. Also, if team members were not somewhat involved in different aspects, it proved to be difficult to ask for help from those team members.
+   * Trying to split work on a small scale project like this was difficult. Even when we did find a way to divide the work, there were people who were waiting on other parts of the project to be completed to continue. Also, if team members were not somewhat involved in different aspects, it proved to be difficult to ask for help from those team members.   
+   * We found that constant communication is needed even at the cost of being a nuisance at times. This kept all team members in the loop in up to date with all things currently happening with the project. Without this sort of communication, team members would have been working on the same problems and wasting time.
