@@ -8,7 +8,7 @@
 [Testing](#testing)    
 [Project Breakdown](#project-breakdown)    
 [What Has Been Completed](#what-has-been-completed-updated)   
-[Major Features for Next Release](#major-features-for-next-release-updated)
+[Major Features for Next Release](#major-features-for-next-release-updated)   
 [Post Mortem](#emulator-post-mortem-new)
   
 # **Introduction**
