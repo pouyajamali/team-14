@@ -184,6 +184,9 @@ The Team were divided into roles as follows:
 * No New Updates Will be Added to this Project
 
 # **Emulator Post Mortem** (**NEW**)
-* During this team project, we have found how hard it can really be to work in a team and to be able to manage a schedule escpecially agmonst students. This project included various aspects of a real-life team project that we may not have been able to experience in other courses. 
+* During this team project, we have found how hard it can really be to work in a team and to be able to manage a schedule escpecially agmonst students. This project included various aspects of a real-life team project that we may not have been able to experience in other courses.
    * Trying to split work on a small scale project like this was difficult. Even when we did find a way to divide the work, there were people who were waiting on other parts of the project to be completed to continue. Also, if team members were not somewhat involved in different aspects, it proved to be difficult to ask for help from those team members.   
    * We found that constant communication is needed even at the cost of being a nuisance at times. This kept all team members in the loop in up to date with all things currently happening with the project. Without this sort of communication, team members would have been working on the same problems and wasting time.
+   * Also trying to accomandate for everyone's schedule is also a very difficult task as we all have jobs or many other classes to accomandate for through out the semester. 
+   * We would've also changed our goals for this project to accomandate for more time as we found that we all had other priorites as well that could not be avoided. This led to us setting goals we wanted instead of setting goals that were achievable. 
+   * Having someone to take on "The Bad-Guy" role (as in staying on top of everyone to make sure everyone is doing their work) is key to making sure all task are being completed and everyone is staying on top of their share of the work.
