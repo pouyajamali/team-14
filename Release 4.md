@@ -160,6 +160,9 @@ The Team were divided into roles as follows:
        * Opens files such as .html, .txt and .js
        * ~~Working on trying to open ROM Files if possible~~
        * Extra Tool can now open ROM Files (**NEW**)
+          * Opening games made by OCTO will open them in Hex code
+	  * Opening regular Rom files will open with function names
+	  * Can only save them to text files and not back to rom.
        * can save file to specified filetype
        
  * Game 2 (**NEW**)
