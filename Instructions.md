@@ -5,7 +5,7 @@
 *	Near the bottom, click on the Choose File button
 *	Choose from Pong.ch8, memory.ch8 or Dodging.ch8 (files included)
 * If PONG2 has been choosen:  
-   *	Once Pong.ch8 has been uploaded, the game will be displayed
+   *	Once Pong.ch8\*\* has been uploaded, the game will be displayed
    *	To play, use keys 1 (UP) and Q (DOWN) to move the left paddle. Use keys R (DOWN) and 4 (UP) to move the right paddle
 * If Dodging.ch8 has been choosen:
    *   The game will start once it has been loaded
@@ -24,9 +24,14 @@
    *   Can only be used while Paused
 * Use "Prev" button to go back one operation at a time
    *   Can only be used while Paused
+   
+\*\* This Pong game is not made from the team but is from the internet and has been included to show our emulator works with games others have made.
 
 
 # **Instructions For Automatic Testing of Chip8 Emulator**
 
 *  Open chip8.js
-*  From the webpage, in the top right corner, click
+*  From the webpage, in the top right corner, click "Extra Tool"
+*  Choose the file type you would like to open and then the file to open
+*  After editing the file, you are able to save it back.
+*  Games made with the OCTO IDE cannot be opened with our tool as it has its own special encoding that is not compatiable with our tool. Our tool will open other ROM files found on the internet.
