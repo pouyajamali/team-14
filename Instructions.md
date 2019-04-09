@@ -34,4 +34,6 @@
 *  From the webpage, in the top right corner, click "Extra Tool"
 *  Choose the file type you would like to open and then the file to open
 *  After editing the file, you are able to save it back.
-*  Games made with the OCTO IDE cannot be opened with our tool as it has its own special encoding that is not compatiable with our tool. Our tool will open other ROM files found on the internet.
+*  Games made with the OCTO IDE will open but will only show in hex code.
+*  Regualr ROM Files will open and show the instruction names of the opcode.
+   *  All games files can only be saved to text files
